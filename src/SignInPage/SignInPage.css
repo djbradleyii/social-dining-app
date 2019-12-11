@@ -1,0 +1,26 @@
+#signin-form{
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+}
+
+#signin-form input{
+    height: 25px;
+    border-radius: 2px;
+}
+
+@media only screen and (min-width: 500px) {
+    #signin-form{
+        width: 500px;
+        padding: 25px;
+        font-size: 25px;
+    }
+    #signin-form input{
+        height: 35px;
+    }
+    #signin-form button{
+        font-size: 20px;
+        width: 200px;
+        height: 35px;
+    }
+  }
