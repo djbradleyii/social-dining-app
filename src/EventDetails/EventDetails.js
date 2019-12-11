@@ -2,6 +2,19 @@ import React from 'react';
 import './EventDetails.css';
 
 function EventDetails(props){
+    const eventId = parseInt(localStorage.getItem("eventId"));
+    const event = props.events.find((event) => {
+        return event.id === eventId;
+    });
+    function getEventName(event){
+        let eventName;
+        if(event.purpose === 'Social' || event.purpose === 'Networking'){
+            eventName = `${event.purpose} event at ${event.restaurant}`;
+        }else{
+            eventName = `${event.purpose} at ${event.restaurant}`;
+        }
+    return eventName;
+    }
     return(
         <section>
             <table className="event-details">
