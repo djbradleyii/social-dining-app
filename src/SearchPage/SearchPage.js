@@ -7,6 +7,13 @@ import { EventEmitter } from 'events';
 
 
 export default class SearchPage extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            events: EVENTS,
+            searchOptions: {},
+        };
+      }
     render(){
         return(
             <div>
