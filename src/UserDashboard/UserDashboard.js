@@ -26,6 +26,7 @@ export default class UserDashboard extends React.Component{
         }
         return(
             <div className="user-dashboard">
+                <UserDetails user={user} events={EVENTS} />
                 <section className="user-upcoming-events">
                     <table className="user-upcoming-events-table">
                     <thead><tr><th>Upcoming Events:</th></tr></thead>
