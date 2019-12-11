@@ -3,6 +3,20 @@ import { Link } from 'react-router-dom';
 import './Nav.css';
 
 function Nav(props){
+    function clearLocalStorage(){
+        localStorage.removeItem("authorized");
+        localStorage.removeItem("userId");
+        localStorage.removeItem("eventId");
+        props.history.push('/');
+    }
+
+    function getUserId(){
+        return localStorage.getItem("userId");
+    }
+
+    function getAuthorizationStatus(){
+        return localStorage.getItem("authorized");
+    }
     function displayNav(){
         const authorizationStatus = getAuthorizationStatus();
         if(authorizationStatus === 'yes'){
