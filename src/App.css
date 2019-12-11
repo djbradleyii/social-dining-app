@@ -1,0 +1,28 @@
+form{
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+input[type="radio"]{
+    margin: 0;
+    display: inline-block;
+    width: auto;
+}
+
+select{
+    margin-top: 5px;
+    margin-bottom: 5px;  
+}
+
+.radio li{
+    list-style-type: none;
+}
+
+input{
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+}
