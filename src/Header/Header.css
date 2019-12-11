@@ -1,0 +1,14 @@
+header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+header > a{
+    width: 100%;
+}
+
+.main-header:hover{
+    border-bottom: none;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.4);
+}
