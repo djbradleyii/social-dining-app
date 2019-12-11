@@ -3,7 +3,6 @@ import './EventsList.css';
 
 export default class SearchPage extends React.Component{  
     render(){
-        console.log(this.props);
 /*         const events = this.props.events.map((event, i) => {
             let eventName;
             if(event.purpose === 'Social' || event.purpose === 'Networking'){

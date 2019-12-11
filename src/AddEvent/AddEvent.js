@@ -28,8 +28,6 @@ export default class AddEvent extends React.Component{
 
         user.events.push(newEvent.id);
         EVENTS.push(newEvent);  
-        console.log(EVENTS);
-        console.log(this.props.users);
         localStorage.setItem("eventId", newEvent.id);
         this.props.history.push(`/event/${newEvent.id}`);
     }
