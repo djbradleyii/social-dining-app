@@ -2,6 +2,31 @@ import React from 'react';
 import './RegisterPage.css';
 
 export default class RegisterPage extends React.Component{
+    handleRegSubmit = e => {
+        e.preventDefault();
+        const {fname, lname, dob, gender, status, occupation, userSummary, email, password } = e.target;
+        const newId = this.props.users.length + 1;
+        const newUser = {
+            id : newId,
+            fname : fname.value,
+            lname : lname.value,
+            email : email.value,
+            password : password.value,
+            dob : dob.value.toString(),
+            gender : gender.value,
+            occupation : occupation.value,
+            status : status.value,
+            summary : userSummary.value,
+            events : []
+        }
+        this.props.history.push(`/dashboard/${newUser.id}`);
+        
+        localStorage.setItem("authorized","yes");
+        localStorage.setItem("userId", newUser.id);
+        this.props.users.push(newUser);
+
+        this.props.history.push(`/dashboard/${newUser.id}`);
+    }
     render(){
         return(
             <form id="register-form" onSubmit={this.handleRegSubmit}>
