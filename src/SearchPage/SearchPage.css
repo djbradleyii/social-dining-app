@@ -1,0 +1,154 @@
+#search-form{
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.search-type{
+    margin-right: 15px;
+}
+
+.search-type-label{
+    display: block;
+}
+
+#event-date-search:disabled{
+    background-color: white;
+    border: none;
+}
+
+#search{
+    width: 100%;
+}
+
+#search-form input[type="radio"]{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#search-form > div{
+    margin-bottom: 5px;
+}
+
+.events-list{
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.events-list li{
+    list-style-type: none;
+    margin-bottom: 8px;
+}
+
+.events-list h2{
+    font-size: 16px;
+}
+
+/* EVENTS LIST TABLE */
+.events-list-table{
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.events-list-table tbody{
+    display: block;
+    width:100%;
+}
+
+.events-list-table tbody th{
+    font-size: 12px;
+    padding: 5px;
+    width: 100%;
+}
+.events-list-table tbody td{
+    font-size: 12px;
+}
+
+.events-list-table tbody tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.events-list-table tbody tr td{
+    flex: 1;
+    font-size: 10px;
+    padding-left: 2px;
+    text-align: center;
+}
+
+.events-list-table thead th{
+    font-size: 18px;
+}
+
+.events-list-table thead{
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+
+@media only screen and (min-width: 500px) {
+    #search-form{
+        width: 700px;
+        padding: 20px;
+        font-size: 18px;
+    }
+    #search-form input{
+        height: 30px;
+    }
+    #search-form input[type="radio"]{
+        width:14px;
+    }
+    #search-form button{
+        font-size: 16px;
+        width: 160px;
+        height: 25px;
+    }
+    .events-list{
+        margin-top: 15px;
+    }
+
+    .events-list h2{
+        font-size: 30px;
+        margin-bottom: 10px;
+        text-align: center;
+        display: block;
+        width:100%;
+    }
+/* EVENTS LIST TABLE */
+
+.events-list-table tbody th{
+    font-size: 20px;
+}
+.events-list-table tbody td{
+    font-size: 20px;
+}
+
+.events-list-table tbody tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.events-list-table tbody tr td{
+    flex: 1;
+    font-size: 16px;
+    padding-left: 2px;
+    text-align: center;
+}
+
+.events-list-table thead th{
+    font-size: 28px;
+}
+
+}
