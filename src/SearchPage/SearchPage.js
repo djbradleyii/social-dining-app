@@ -14,6 +14,27 @@ export default class SearchPage extends React.Component{
             searchOptions: {},
         };
       }
+
+
+    handleFormSubmission = e => {
+        e.preventDefault();
+        let { term, eventDate, searchType } = e.target;
+        if(!term){
+            term = '';
+        }
+
+        if(!eventDate){
+            eventDate = '';
+        }
+
+        const searchOptions = {
+            term: term.value,
+            date: eventDate.value,
+            searchType: searchType.value
+        };
+
+        this.setState({searchOptions});
+    }
     render(){
         return(
             <div>
