@@ -3,6 +3,36 @@ import EVENTS from '../events';
 import './AddEvent.css';
 
 export default class AddEvent extends React.Component{
+    handleFormSubmit = e => {
+        e.preventDefault();
+        const { restaurant, restaurantAddress, eventDescription, eventDate, purpose } = e.target;
+        //const { title, ageRange} = e.target;
+        const userId = parseInt(localStorage.getItem("userId"));
+        const users = this.props.users;
+        const user = users.find((user) => {
+            return user.id === userId;
+        });
+
+        const newEvent = {
+            id: EVENTS.length + 1,
+            organizer : user.fname,
+            purpose: purpose.value,
+            restaurant: restaurant.value,
+            address : restaurantAddress.value,
+            date : eventDate.value,
+            time : "05:30PM",
+            description : eventDescription.value,
+            singlesOnly : "No",
+            attendees : 0  
+        }
+
+        user.events.push(newEvent.id);
+        EVENTS.push(newEvent);  
+        console.log(EVENTS);
+        console.log(this.props.users);
+        localStorage.setItem("eventId", newEvent.id);
+        this.props.history.push(`/event/${newEvent.id}`);
+    }
     render(){
         return(
             <form onSubmit={this.handleFormSubmit} id="add-event-form">
