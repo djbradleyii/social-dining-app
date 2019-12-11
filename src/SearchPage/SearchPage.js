@@ -15,6 +15,40 @@ export default class SearchPage extends React.Component{
         };
       }
 
+    getEvents = () => {
+        let { term, date, searchType} = this.state.searchOptions;
+        let events = this.state.events;
+
+        if(term){
+            if(searchType.toLowerCase() === "purpose".toLowerCase()){
+                events = events.filter((event) => {
+                    return event.purpose.toLowerCase().includes(term.toLowerCase());
+                });
+            }else if(searchType.toLowerCase() === "restaurant".toLowerCase()){
+                events = events.filter((event) => {
+                    return event.restaurant.toLowerCase().includes(term.toLowerCase());
+                });
+            }
+        }
+
+        if(date){
+            events = events.filter((event) => {
+                return event.date >= date;
+            });
+        }
+
+        events = events.map((event, i) => {
+            const eventPageId = event.id;
+            const eventPageURL = `/event/${eventPageId}`;
+        return(
+            <tr>
+            <td>{event.title}</td><td>{event.organizer}</td><td>{event.purpose}</td><td>{event.restaurant}</td><td>{event.date}</td>
+            </tr>
+        ); 
+    });
+
+        return events;
+    }
 
     handleFormSubmission = e => {
         e.preventDefault();
