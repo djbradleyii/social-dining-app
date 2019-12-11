@@ -2,7 +2,19 @@ import React from 'react';
 import './UserDetails.css';
 
 function UserDetails(props){
+    const user = props.user;
+    function fullName(user){
+        return `${user.fname} ${user.lname}`;
+    }
 
+    function encryptEmail(user){
+        let email = user.email;
+        let indexOfAt = email.indexOf('@');
+        let sliced = email.slice(1,indexOfAt-1);
+        let regx = new RegExp(sliced,'gi');
+        let hiddenEmail = email.replace(regx,'*'.repeat(sliced.length));
+        return hiddenEmail;
+    }
     return(
         <section className="user-details">
             <table className="user-details-table">
