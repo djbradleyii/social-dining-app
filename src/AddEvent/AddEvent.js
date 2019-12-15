@@ -53,7 +53,7 @@ export default class AddEvent extends React.Component{
                 </div>
                 <div>
                     <label htmlFor="event-date">Date:</label>
-                    <input type="date" id="event-date" name="eventDate" />
+                    <input type="datetime-local" id="event-date" name="eventDate" />
                 </div>
                 <div>
                     <label htmlFor="purpose">Purpose:</label>
