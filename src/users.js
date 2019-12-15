@@ -8,9 +8,8 @@ export default [
 		dob : "03/02/1979",
 		gender : "Male",
 		occupation : "Marketing",
-		status : "Married",
-		summary : "Nam ullamcorper finibus purus, id facilisis nisi scelerisque in. Aliquam vel nisi id tellus efficitur sagittis. Sed vel maximus erat. Nunc dapibus purus massa, in molestie ipsum gravida vel. Phasellus varius nec risus a ornare.",
-		events : [5, 3]
+		marital_status : "Married",
+		bio : "Nam ullamcorper finibus purus, id facilisis nisi scelerisque in. Aliquam vel nisi id tellus efficitur sagittis. Sed vel maximus erat. Nunc dapibus purus massa, in molestie ipsum gravida vel. Phasellus varius nec risus a ornare.", 
 	},
 	{
 		id : 2,
@@ -21,9 +20,8 @@ export default [
 		dob : "11/14/1980",
 		gender : "Female",
 		occupation : "Lawyer",
-		status : "Single",
-		summary : "Vivamus vestibulum justo vel ultrices vehicula. Vivamus vitae maximus justo. Sed eu leo eu sem auctor suscipit et non ex.",
-		events : [8]
+		marital_status : "Single",
+		bio : "Vivamus vestibulum justo vel ultrices vehicula. Vivamus vitae maximus justo. Sed eu leo eu sem auctor suscipit et non ex.",
 	},
 	{
 		id : 3,
@@ -34,9 +32,8 @@ export default [
 		dob : "04/24/1993",
 		gender : "Male",
 		occupation : "Engineer",
-		status : "Separated",
-		summary : "Sed nec scelerisque massa, aliquam facilisis dolor. Ut ante arcu, facilisis vitae malesuada nec, auctor eu nunc. Sed congue, mauris interdum vulputate tempor, est felis molestie nisl, id congue dui augue eu augue.",
-		events : []
+		marital_status : "Separated",
+		bio : "Sed nec scelerisque massa, aliquam facilisis dolor. Ut ante arcu, facilisis vitae malesuada nec, auctor eu nunc. Sed congue, mauris interdum vulputate tempor, est felis molestie nisl, id congue dui augue eu augue.",
 	},
 	{
 		id : 4,
@@ -47,9 +44,9 @@ export default [
 		dob : "05/02/1965",
 		gender : "Female",
 		occupation : "Owner",
-		status : "Single",
-		summary : "Donec id tellus nunc. Aliquam erat volutpat. Nam a elit maximus, cursus metus et, sollicitudin augue.",
-		events : [7]
+		marital_status : "Single",
+		bio : "Donec id tellus nunc. Aliquam erat volutpat. Nam a elit maximus, cursus metus et, sollicitudin augue.",
+
 	},
 	{
 		id : 5,
@@ -60,9 +57,8 @@ export default [
 		dob : "10/31/1983",
 		gender : "Male",
 		occupation : "Full Stack Developer",
-		status : "Single",
-		summary : "Maecenas eleifend ante eu arcu lacinia blandit. Donec ante mauris, dignissim id ligula vel, feugiat pharetra lectus. In eget turpis sed mi malesuada auctor vitae quis elit.",
-		events : [2,4]
+		marital_status : "Single",
+		bio : "Maecenas eleifend ante eu arcu lacinia blandit. Donec ante mauris, dignissim id ligula vel, feugiat pharetra lectus. In eget turpis sed mi malesuada auctor vitae quis elit.",
 	},
 	{
 		id : 6,
@@ -73,8 +69,8 @@ export default [
 		dob : "02/24/1990",
 		gender : "Male",
 		occupation : "Chef",
-		status : "Married",
-		summary : "Suspendisse tempor eget purus vel feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo sapien eget dui interdum venenatis.",
-		events : [1, 6]
+		marital_status : "Married",
+		bio : "Suspendisse tempor eget purus vel feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo sapien eget dui interdum venenatis.",
+
 	}
 ]
