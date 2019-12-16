@@ -1,5 +1,4 @@
 import React from 'react';
-import EVENTS from '../events';
 import './AddEvent.css';
 
 export default class AddEvent extends React.Component{
@@ -7,7 +6,7 @@ export default class AddEvent extends React.Component{
         e.preventDefault();
         const { restaurant, restaurantAddress, eventDescription, eventDate, purpose } = e.target;
         //const { title, ageRange} = e.target;
-        const userId = parseInt(localStorage.getItem("userId"));
+/*         const userId = parseInt(localStorage.getItem("userId"));
         const users = this.props.users;
         const user = users.find((user) => {
             return user.id === userId;
@@ -29,7 +28,7 @@ export default class AddEvent extends React.Component{
         user.events.push(newEvent.id);
         EVENTS.push(newEvent);  
         localStorage.setItem("eventId", newEvent.id);
-        this.props.history.push(`/event/${newEvent.id}`);
+        this.props.history.push(`/event/${newEvent.id}`); */
     }
     render(){
         return(

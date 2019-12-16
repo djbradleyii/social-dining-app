@@ -1,11 +1,10 @@
 import React from 'react';
 import EventDetails from '../EventDetails/EventDetails';
-import EVENTS from '../events';
 import './EventPage.css';
 
-function EventPage(props){
+function EventPage(){
     return(
-        <EventDetails events={EVENTS} />
+        <EventDetails />
     );
 }
 
