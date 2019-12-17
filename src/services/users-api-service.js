@@ -28,6 +28,20 @@ const UsersApiService = {
             return response.json();
           })
       },
+      getUsersEvents(userId) {
+          //fetch events for the individual
+        return fetch(`${config.API_ENDPOINT}/users/${userId}/events`, {
+            headers: {
+                'authorization': `Bearer ${TokenService.getAuthToken()}`
+            },
+        })
+          .then(response =>{
+            if(!response.ok){
+              throw new Error('Something went wrong. Please try again later.');
+            }
+            return response.json();
+          })
+      },
       
       
 }
