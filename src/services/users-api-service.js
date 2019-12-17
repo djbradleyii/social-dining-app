@@ -15,6 +15,20 @@ const UsersApiService = {
             return response.json();
           })
       },
+      getUserById(userId) {
+        return fetch(`${config.API_ENDPOINT}/users/${userId}`, {
+            headers: {
+                'authorization': `Bearer ${TokenService.getAuthToken()}`
+            },
+        })
+          .then(response => {
+            if(!response.ok){
+              throw new Error('Something went wrong. Please try again later.');
+            }
+            return response.json();
+          })
+      },
+      
       
 }
 
