@@ -1,0 +1,57 @@
+main{
+    margin-top: 10px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+table.selected-user-table{
+    padding: 10px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+table.selected-user-table th{
+    font-size: 16px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 2px dashed rgb(202, 193, 193);
+    width: 100%;
+    text-align: left;
+}
+
+table.selected-user-table tr{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2px;
+    /*flex-direction: column*/
+}
+
+table.selected-user-table td{
+    flex: 1;
+    font-size: 12px;
+    padding: 2px;
+}
+
+table.selected-user-table td:nth-child(1){
+    text-align: center;
+    /*margin-top: 5px;
+    margin-bottom: 5px;*/
+}
+
+.selected-user-table .button-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-user-table .button-container{
+    width: 150px;
+}
+
+div > button{
+    width: 100%;
+    height: 25px;
+    background-color: none;
+    border: 1px solid black;
+    border-radius: 6px;
+}
