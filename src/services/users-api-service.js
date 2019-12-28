@@ -28,7 +28,7 @@ const UsersApiService = {
             return response.json();
           })
       },
-      getAllEventsByUserId() {
+      getAllEventsForUser() {
           //fetch events for the individual user
         return fetch(`${config.API_ENDPOINT}/users/all/events`, {
             headers: {
@@ -68,7 +68,6 @@ const UsersApiService = {
             'authorization': `Bearer ${TokenService.getAuthToken()}`,
           },
           body: JSON.stringify({
-            id: userId,
           }),
         })
           .then(response =>{
@@ -78,23 +77,19 @@ const UsersApiService = {
             return response.json();
           })
       },
-      updateUserById(userId, userUpdates) {
-        return fetch(`${config.API_ENDPOINT}/users/${userId}`, {
-          method: 'POST',
+      updateUserById(userUpdates) {
+        return fetch(`${config.API_ENDPOINT}/users`, {
+          method: 'PATCH',
           headers: {
             'content-type': 'application/json',
             'authorization': `Bearer ${TokenService.getAuthToken()}`,
           },
-          body: JSON.stringify({
-            userId,
-            userUpdates
-          }),
+          body: JSON.stringify(userUpdates),
         })
           .then(response =>{
             if(!response.ok){
               throw new Error('Something went wrong. Please try again later.');
             }
-            return response.json();
           })
       }  
 }
