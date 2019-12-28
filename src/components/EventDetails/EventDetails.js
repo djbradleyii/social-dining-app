@@ -10,6 +10,7 @@ import moment from 'moment';
 class EventDetails extends React.Component{
     static contextType = ContextManager;
 
+    
     deleteEvent = (e, event_id) => {
         const { history } = this.props;
         EventsApiService.deleteEvent(event_id)
