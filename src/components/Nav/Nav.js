@@ -2,10 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 import TokenService from '../../services/token-service';
+import ActiveUserService from '../../services/activeuser-service';
 
 function Nav(props){
     function handleLogoutClick(){
         TokenService.clearAuthToken();
+        ActiveUserService.clearUserData();
+        window.localStorage.removeItem('event');
         props.history.push('/');
     }
 
