@@ -24,7 +24,7 @@ class EventDetails extends React.Component{
         const { history } = this.props;
         EventsApiService.getEventById(event_id)
         .then((event) => {
-            window.localStorage.setItem('event', JSON.stringify(event))
+            window.sessionStorage.setItem('event', JSON.stringify(event))
         })
         history.push(`/edit/event/${event_id}`)
     }

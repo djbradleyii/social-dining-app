@@ -1,13 +1,13 @@
 const ActiveUserService = {
   saveUserData(userData) {
-    window.localStorage.setItem('activeUser', JSON.stringify(userData))
+    window.sessionStorage.setItem('activeUser', JSON.stringify(userData))
   },
   getUserData() {
-    const userData = window.localStorage.getItem('activeUser');
+    const userData = window.sessionStorage.getItem('activeUser');
     return JSON.parse(userData)
   },
   clearUserData() {
-    window.localStorage.removeItem('activeUser')
+    window.sessionStorage.removeItem('activeUser')
   },
   hasUserData() {
     return !!ActiveUserService.getUserData()

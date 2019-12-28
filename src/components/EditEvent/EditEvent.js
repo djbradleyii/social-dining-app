@@ -6,6 +6,12 @@ import ContextManager from '../../context/context-manager';
 export default class EditEvent extends React.Component{
     static contextType = ContextManager;
 
+    constructor(props){
+        super(props);
+        this.state = {
+            eventDetails: { event: [ ] }
+        }
+    }
     handleFormSubmit = (e, event_id) => {
         e.preventDefault();
 
@@ -19,20 +25,29 @@ export default class EditEvent extends React.Component{
         EventsApiService.updateEventById(event_id, eventUpdates)
         .then((event) => {
             this.context.getAllEventsForUser();
-            window.localStorage.removeItem('event');
+            window.sessionStorage.removeItem('event');
             this.props.history.push(`/event/${event_id}`);
         })
     }
 
-    render(){
-        let eventDetails = window.localStorage.getItem('event');
+    componentDidMount(){
+        let eventDetails = window.sessionStorage.getItem('event');
         eventDetails = JSON.parse(eventDetails);
-        console.log(eventDetails);
+        this.setState({
+            eventDetails
+        })
+    }
+
+    render(){
+/*         let eventDetails = window.sessionStorage.getItem('event');
+        eventDetails = JSON.parse(eventDetails);
+        console.log(eventDetails); */
+        console.log(this.context);
         return(
-            <form onSubmit={(e) => this.handleFormSubmit(e, eventDetails.event.id)} id="add-event-form">
+            <form onSubmit={(e) => this.handleFormSubmit(e, this.state.eventDetails.event.id)} id="add-event-form">
                 <div>
                     <label htmlFor="title">Title:</label>
-                    <input type="text" id="title" placeholder="Wine & Networking" name="title" required defaultValue={eventDetails.event.title} />
+                    <input type="text" id="title" placeholder="Wine & Networking" name="title" required defaultValue={this.state.eventDetails.event.title} />
                 </div>
                 <div>
                     <label htmlFor="restaurant">Restaurant:</label>
@@ -40,11 +55,11 @@ export default class EditEvent extends React.Component{
                 </div>
                 <div>
                     <label htmlFor="restaurant-address">Restaurant Address:</label>
-                    <input type="text" id="restaurant-address" placeholder="123 Restaurant Lane" name="restaurantAddress" required defaultValue={eventDetails.event.address} disabled/>
+                    <input type="text" id="restaurant-address" placeholder="123 Restaurant Lane" name="restaurantAddress" required defaultValue={this.state.eventDetails.event.address} disabled/>
                 </div>
                 <div>
                     <label htmlFor="event-description">Description:</label>
-                    <textarea id="event-description" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis finibus orci, vel auctor dolor vulputate vitae. In fringilla tristique dui vitae blandit." name="eventDescription" required  defaultValue={eventDetails.event.description}> 
+                    <textarea id="event-description" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis finibus orci, vel auctor dolor vulputate vitae. In fringilla tristique dui vitae blandit." name="eventDescription" required  defaultValue={this.state.eventDetails.event.description}> 
                     </textarea>
                 </div>
                 <div>

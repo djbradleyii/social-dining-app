@@ -8,7 +8,7 @@ function Nav(props){
     function handleLogoutClick(){
         TokenService.clearAuthToken();
         ActiveUserService.clearUserData();
-        window.localStorage.removeItem('event');
+        window.sessionStorage.removeItem('event');
         props.history.push('/');
     }
 
