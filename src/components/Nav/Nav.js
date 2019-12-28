@@ -12,10 +12,9 @@ function Nav(props){
     function displayNav(){
         const authorizationStatus = TokenService.hasAuthToken();
         if(authorizationStatus){
-            const userId = 1;
             return(
                 <nav role="navigation">
-                    <Link to={`/dashboard/${userId}`}>Dashboard</Link>
+                    <Link to={`/dashboard`}>Dashboard</Link>
                     <Link to='/event'>Add Event</Link>
                     <Link to='/search'>Search</Link>
                     <Link to='/signout' onClick={handleLogoutClick}>Sign Out</Link>
