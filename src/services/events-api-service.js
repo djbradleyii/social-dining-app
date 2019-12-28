@@ -28,10 +28,10 @@ const EventsApiService = {
             return response.json();
           })
       },
-      getEventByKeyword(eventId, keyword) {
+      getEventByKeyword(keyword) {
           //fetch events based on keyword
         let queryString = keyword ? `?keyword=${keyword}` : ``;
-        return fetch(`${config.API_ENDPOINT}/events/${eventId}/events/${queryString}`, {
+        return fetch(`${config.API_ENDPOINT}/events/${queryString}`, {
             headers: {
                 'authorization': `Bearer ${TokenService.getAuthToken()}`
             },
@@ -44,7 +44,7 @@ const EventsApiService = {
           })
       },
       getAllAttendeesByEventId(eventId) {
-      return fetch(`${config.API_ENDPOINT}/events/${eventId}/attendees`, {
+      return fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
           headers: {
               'authorization': `Bearer ${TokenService.getAuthToken()}`
           },
@@ -56,17 +56,14 @@ const EventsApiService = {
           return response.json();
         })
     },
-      postEvent(userId, newEvent) {
+      postEvent(newEvent) {
         return fetch(`${config.API_ENDPOINT}/events`, {
           method: 'POST',
           headers: {
             'content-type': 'application/json',
             'authorization': `Bearer ${TokenService.getAuthToken()}`,
           },
-          body: JSON.stringify({
-            organizer: userId,
-            newEvent,
-          }),
+          body: JSON.stringify(newEvent),
         })
           .then(response =>{
             if(!response.ok){
@@ -77,38 +74,31 @@ const EventsApiService = {
       },
       deleteEvent(eventId) {
         return fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
-          method: 'POST',
+          method: 'DELETE',
           headers: {
             'content-type': 'application/json',
             'authorization': `Bearer ${TokenService.getAuthToken()}`,
-          },
-          body: JSON.stringify({
-            id: eventId,
-          }),
+          }
         })
-          .then(response =>{
+          .then(response => {
             if(!response.ok){
               throw new Error('Something went wrong. Please try again later.');
             }
-            return response.json();
           })
       },
       updateEventById(eventId, eventUpdates) {
         return fetch(`${config.API_ENDPOINT}/events/${eventId}`, {
-          method: 'POST',
+          method: 'PATCH',
           headers: {
             'content-type': 'application/json',
             'authorization': `Bearer ${TokenService.getAuthToken()}`,
           },
-          body: JSON.stringify({
-            eventUpdates,
-          }),
+          body: JSON.stringify(eventUpdates),
         })
           .then(response =>{
             if(!response.ok){
               throw new Error('Something went wrong. Please try again later.');
             }
-            return response.json();
           })
       }   
 }
