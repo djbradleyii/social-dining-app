@@ -2,6 +2,8 @@ import React from 'react';
 import TokenService from '../../services/token-service';
 import ContextManager from '../../context/context-manager';
 import AuthApiService from '../../services/auth-api-service';
+import ActiveUserService from '../../services/activeuser-service';
+import UsersApiService from '../../services/users-api-service';
 import './SignInPage.css';
 
 export default class SignInPage extends React.Component{
@@ -20,7 +22,10 @@ export default class SignInPage extends React.Component{
             email.value = ''
             password.value = ''
             TokenService.saveAuthToken(res.authToken);
-            console.log(res);
+            UsersApiService.getAllEventsForUser()
+            .then(usersData => {
+                ActiveUserService.saveUserData(usersData)
+            })
             this.context.getAllEventsForUser()
             history.push(`/dashboard`); 
          })
