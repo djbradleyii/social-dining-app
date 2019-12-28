@@ -1,9 +1,11 @@
 import React from 'react';
 import TokenService from '../../services/token-service';
+import ContextManager from '../../context/context-manager';
 import AuthApiService from '../../services/auth-api-service';
 import './SignInPage.css';
 
 export default class SignInPage extends React.Component{
+    static contextType = ContextManager;
     handleSubmitJwtAuth = e => {
        e.preventDefault()
        this.setState({ error: null })
@@ -14,18 +16,20 @@ export default class SignInPage extends React.Component{
          password: password.value,
        })
          .then(res => {
-            //const { history } = this.props;
+            const { history } = this.props;
             email.value = ''
             password.value = ''
             TokenService.saveAuthToken(res.authToken);
-            
-            //history.push(`/dashboard/${res.user_id}`); 
+            console.log(res);
+            this.context.getAllEventsForUser()
+            history.push(`/dashboard`); 
          })
          .catch(res => {
            this.setState({ error: res.error })
          })
 
     }
+
     render(){
         return(
             <form onSubmit={this.handleSubmitJwtAuth} id="signin-form">
