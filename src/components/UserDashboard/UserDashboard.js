@@ -1,43 +1,65 @@
 import React from 'react';
 import UserDetails from '../UserDetails/UserDetails';
+import { Link } from 'react-router-dom';
 import ContextManager from '../../context/context-manager';
-import TokenService from '../../services/token-service';
+import EventsApiService from '../../services/events-api-service';
 import './UserDashboard.css';
+import moment from 'moment';
+import ActiveUserService from '../../services/activeuser-service';
+import AttendeesApiService from '../../services/attendees-api-service';
 
 export default class UserDashboard extends React.Component{
-    componentDidMount(){
-        if(TokenService.hasAuthToken()){
-          Promise.all([
-            this.getAllUsers(),
-            this.getAllEvents(),
-            this.getAllAttendees()
-          ])
-        }
-      }
+    static contextType = ContextManager;
+
+    deleteEvent = (e, event_id) => {
+        EventsApiService.deleteEvent(event_id)
+        .then((res) => {
+            this.context.getAllEventsForUser();
+        })
+    }
     
+    removeRSVP = (e, event_id) => {
+        AttendeesApiService.deleteAttendee(event_id)
+        .then((res) => {
+            this.context.getSelectedEvent(event_id)
+            this.context.getAllEventsForUser();
+        })
+    }
+
+    trimText = (text) => {
+        let desiredTextLength = 10;
+        if(text.length > desiredTextLength){
+            text = text.substring(0, desiredTextLength) + "...";
+        }
+        return text;
+    }
+
     render(){
         return(
             <ContextManager.Consumer>
                 {(value) => {
-/*                             const userId = parseInt(localStorage.getItem("userId"));
-                            const users = value.users;
-                            const user = users.find((user)=>{
-                                return user.id === userId;
-                            }); 
-                    
-                            let events;
-                    
-                            if(user.events.length === 0){
-                                events = <tr><td>No Events Found</td></tr>;
-                            }else{
-                                events = user.events.map((eventId, i) => {
-                                    const userEvent = value.events.find((event, i) => {
-                                        return event.id === eventId;
-                                    });
-                                    events = <tr><td>{userEvent.title}</td><td>{userEvent.organizer}</td><td>{userEvent.purpose}</td><td>{userEvent.restaurant}</td><td>{userEvent.date}</td></tr>; 
-                                    return events;
+                    let activeuser = ActiveUserService.getUserData();
+                    let events = activeuser.events;
+                    let user = activeuser.user;
+                    let eventsList = null;
+
+                    if(events.length === 0){
+                        eventsList = <tr><td>No Events Found</td></tr>;
+                    } else { 
+                                eventsList = events.map((event, i) => {
+                                    let populateOrganizer = null;
+                                    let actionButton = null;
+                                    if(event.organizer_id === user.id){
+                                        populateOrganizer = 'Me';
+                                        actionButton = <button onClick={(e) => this.deleteEvent(e, event.event_id)}>Delete</button>;
+                                    } else {
+                                        let eventId = event.event_id;
+                                        populateOrganizer = <Link to={`/infoPage/${event.event_id}`}>{event.organizer}</Link>;
+                                        actionButton = <button onClick={(e) => this.removeRSVP(e, eventId)}>Remove RSVP</button>
+                                    } 
+                                    return <tr key={i}><td><Link to={`/event/${event.event_id}`}>{this.trimText(event.title)}</Link></td><td>{this.trimText(populateOrganizer)}</td><td>{this.trimText(event.event_purpose)}</td><td>{this.trimText(event.restaurant)}</td><td>{moment(event.date).format('MM/DD/YY')}</td><td>{actionButton}</td></tr>;
                                 });
-                            } */
+                            }
                     return(
                         <div className="user-dashboard">
                             <UserDetails />
@@ -51,8 +73,9 @@ export default class UserDashboard extends React.Component{
                                             <th>Purpose</th>
                                             <th>Restaurant</th>
                                             <th>Date</th>
+                                            <th>Action</th>
                                         </tr>
-                                        {/* events */}
+                                        { eventsList }
                                     </tbody>
                                 </table>
                             </section>
