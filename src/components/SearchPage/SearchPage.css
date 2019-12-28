@@ -94,6 +94,9 @@
     margin-bottom: 8px;
 }
 
+.searchCaseSensitive{
+    font-size: 12px;
+}
 
 @media only screen and (min-width: 500px) {
     #search-form{
