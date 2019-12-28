@@ -47,6 +47,7 @@ export default class UserDashboard extends React.Component{
                         eventsList = <tr><td>No Events Found</td></tr>;
                     } else { 
                                 eventsList = events.map((event, i) => {
+                                    console.log(event);
                                     let populateOrganizer = null;
                                     let actionButton = null;
                                     if(event.organizer_id === user.id){
@@ -54,7 +55,7 @@ export default class UserDashboard extends React.Component{
                                         actionButton = <button onClick={(e) => this.deleteEvent(e, event.event_id)}>Delete</button>;
                                     } else {
                                         let eventId = event.event_id;
-                                        populateOrganizer = <Link to={`/info/${event.event_id}`}>{event.organizer}</Link>;
+                                        populateOrganizer = <Link to={`/info/${event.organizer_id}`}>{event.organizer}</Link>;
                                         actionButton = <button onClick={(e) => this.removeRSVP(e, eventId)}>Remove RSVP</button>
                                     } 
                                     return <tr key={i}><td><Link to={`/event/${event.event_id}`}>{this.trimText(event.title)}</Link></td><td>{this.trimText(populateOrganizer)}</td><td>{this.trimText(event.event_purpose)}</td><td>{this.trimText(event.restaurant)}</td><td>{moment(event.date).format('MM/DD/YY')}</td><td>{actionButton}</td></tr>;
