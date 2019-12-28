@@ -15,10 +15,18 @@ class UserDetails extends React.Component{
         return(
             <ContextManager.Consumer>
                 {(value) => {
-                    let activeuser = ActiveUserService.getUserData();
-                    let user = activeuser.user;
-                    const nameDisplay = user.fname + ' ' + user.lname.charAt(0) + '.';
+
+                    let activeuser = null;
+                    let user = {};
+                    let nameDisplay = '';
+
+                    if(ActiveUserService.hasUserData()){
+                        activeuser = ActiveUserService.getUserData();
+                        user = activeuser.user;
+                        nameDisplay = user.fname + ' ' + user.lname.charAt(0) + '.';
                     user.fullName = nameDisplay
+                    }
+
                         return(
                             <section className="user-details">
                                 <table className="user-details-table">
