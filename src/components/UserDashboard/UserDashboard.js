@@ -27,7 +27,7 @@ export default class UserDashboard extends React.Component{
     }
 
     trimText = (text) => {
-        let desiredTextLength = 10;
+        let desiredTextLength = 7;
         if(text.length > desiredTextLength){
             text = text.substring(0, desiredTextLength) + "...";
         }
@@ -38,16 +38,21 @@ export default class UserDashboard extends React.Component{
         return(
             <ContextManager.Consumer>
                 {(value) => {
-                    let activeuser = ActiveUserService.getUserData();
-                    let events = activeuser.events;
-                    let user = activeuser.user;
+                    let activeuser = null;
+                    let events = [];
+                    let user = {};
                     let eventsList = null;
+
+                    if(ActiveUserService.hasUserData()){
+                        activeuser = ActiveUserService.getUserData();
+                        events = activeuser.events;
+                        user = activeuser.user;
+                    }
 
                     if(events.length === 0){
                         eventsList = <tr><td>No Events Found</td></tr>;
                     } else { 
                                 eventsList = events.map((event, i) => {
-                                    console.log(event);
                                     let populateOrganizer = null;
                                     let actionButton = null;
                                     if(event.organizer_id === user.id){
