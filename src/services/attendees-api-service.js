@@ -35,9 +35,7 @@ const AttendeesApiService = {
             'content-type': 'application/json',
             'authorization': `Bearer ${TokenService.getAuthToken()}`,
           },
-          body: JSON.stringify({
-            newAttendee
-          }),
+          body: JSON.stringify(newAttendee),
         })
           .then(response =>{
             if(!response.ok){
@@ -46,19 +44,19 @@ const AttendeesApiService = {
             return response.json();
           })
       },
-      deleteAttendee(attendeeId) {
-        return fetch(`${config.API_ENDPOINT}/evens/${attendeeId}`, {
-          method: 'POST',
+      deleteAttendee(event_id) {
+        return fetch(`${config.API_ENDPOINT}/attendees`, {
+          method: 'DELETE',
           headers: {
             'content-type': 'application/json',
             'authorization': `Bearer ${TokenService.getAuthToken()}`,
-          }
+          },
+          body: JSON.stringify({event_id})
         })
           .then(response =>{
             if(!response.ok){
               throw new Error('Something went wrong. Please try again later.');
             }
-            return response.json();
           })
       }
 }
