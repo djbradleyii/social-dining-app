@@ -51,9 +51,14 @@ const EventsApiService = {
       })
         .then(response =>{
           if(!response.ok){
-            throw new Error('Something went wrong. Please try again later.');
+            window.location.assign('/notfound')
+            //throw new Error('Something went wrong. Please try again later.');
           }
           return response.json();
+        })
+        .catch((error) => {
+          window.location.assign('/notfound')
+          console.error(error);
         })
     },
       postEvent(newEvent) {
