@@ -10,7 +10,6 @@ import moment from 'moment';
 class EventDetails extends React.Component{
     static contextType = ContextManager;
 
-    
     deleteEvent = (e, event_id) => {
         const { history } = this.props;
         EventsApiService.deleteEvent(event_id)
@@ -24,7 +23,7 @@ class EventDetails extends React.Component{
         const { history } = this.props;
         EventsApiService.getEventById(event_id)
         .then((event) => {
-            window.sessionStorage.setItem('event', JSON.stringify(event))
+            this.context.getSelectedEvent(event_id);
         })
         history.push(`/edit/event/${event_id}`)
     }
