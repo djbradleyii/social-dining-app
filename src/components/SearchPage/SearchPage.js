@@ -25,7 +25,7 @@ export default class SearchPage extends React.Component{
                 events
             })
         })
-        if(this.state.keyword.length === 0){
+        if(this.state.keyword.length === 1){
             EventsApiService.getAllEvents()
             .then(events => {
                 this.setState({
