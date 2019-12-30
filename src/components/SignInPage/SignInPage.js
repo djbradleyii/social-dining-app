@@ -30,7 +30,7 @@ export default class SignInPage extends React.Component{
             history.push(`/dashboard`); 
          })
          .catch(res => {
-           this.setState({ error: res.error })
+           this.setState({ errorMessage: res.error })
          })
 
     }
@@ -38,6 +38,7 @@ export default class SignInPage extends React.Component{
     render(){
         return(
             <form onSubmit={this.handleSubmitJwtAuth} id="signin-form">
+                <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
                 <div>
                     <label htmlFor="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="myemail@gmail.com" />

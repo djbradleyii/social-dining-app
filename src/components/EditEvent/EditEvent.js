@@ -19,7 +19,11 @@ export default class EditEvent extends React.Component{
         EventsApiService.updateEventById(event_id, eventUpdates)
         .then((event) => {
             this.context.getAllEventsForUser();
+            this.context.updateErrorMessage(null);
             this.props.history.push(`/event/${event_id}`);
+        })
+        .catch(error => {
+            this.context.updateErrorMessage( error.message );
         })
     }
 
@@ -28,6 +32,7 @@ export default class EditEvent extends React.Component{
         let eventDetails = this.context.selectedEvent;
         return(
             <form onSubmit={(e) => this.handleFormSubmit(e, eventDetails.event.id)} id="add-event-form">
+                <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
                 <div>
                     <label htmlFor="title">Title:</label>
                     <input type="text" id="title" placeholder="Wine & Networking" name="title" required defaultValue={eventDetails.event.title} />

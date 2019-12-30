@@ -32,7 +32,11 @@ export default class RegisterPage extends React.Component{
                     occupation.value = '';
                     bio.value = '';
                     this.context.getAllEventsForUser();
+                    this.context.updateErrorMessage(null)
                     history.push(`/dashboard`);
+                })
+                .catch(error => {
+                    this.context.updateErrorMessage(error.message)
                 })
             }
         }
@@ -41,6 +45,7 @@ export default class RegisterPage extends React.Component{
         const userData = ActiveUserService.getUserData().user;
         return(
             <form id="register-form" onSubmit={this.handleRegSubmit}>
+                <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
                 <div>
                     <label htmlFor="fname">First Name:</label>
                     <input type="text" id="fname" placeholder="Ken" name="fname" required defaultValue={userData.fname}/>

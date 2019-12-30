@@ -37,16 +37,21 @@ export default class RegisterPage extends React.Component{
                     bio.value = '';
                     email.value = '';
                     password.value = '';
+                    this.context.updateErrorMessage(null)
                     history.push(`/signin`);
                 })
+                .catch(error => {
+                    this.context.updateErrorMessage('Oops: '+ error.message)
+                })
             } else {
-                console.log('error: Password must match')
+                this.context.updateErrorMessage('Password must match')
             }
         }
 
     render(){
         return(
             <form id="register-form" onSubmit={this.handleRegSubmit}>
+                <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
                 <div>
                     <label htmlFor="fname">First Name:</label>
                     <input type="text" id="fname" placeholder="Ken" name="fname" required />

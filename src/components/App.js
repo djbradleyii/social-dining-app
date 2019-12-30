@@ -31,7 +31,7 @@ class App extends React.Component{
       loggedInUserData: {},
       events: [],
       selectedEvent: {},
-      error: null
+      errorMessage: null
     }
   }
 
@@ -70,6 +70,12 @@ class App extends React.Component{
     this.getSelectedEvent(event_id);
   }
 
+  updateErrorMessage = (error) => {
+    this.setState({
+      errorMessage: error
+    });
+  }
+
   getAllEvents = () => {
     const { keyword } = this.state;
     EventsApiService.getAllEvents(keyword)
@@ -97,11 +103,13 @@ class App extends React.Component{
       updateKeyword: this.updateKeyword,
       loggedInUserData: this.state.loggedInUserData,
       events: this.state.events,
+      errorMessage: this.state.errorMessage,
       eventAttendees: this.state.eventAttendees,
       getSelectedEvent: this.getSelectedEvent,
       selectedEvent: this.state.selectedEvent,
       getAllEvents: this.getAllEvents,
       getAllEventsForUser: this.getAllEventsForUser, 
+      updateErrorMessage: this.updateErrorMessage,
       updateEventId: this.updateEventId
     }
     return(
