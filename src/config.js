@@ -1,4 +1,4 @@
 export default{
-    API_ENDPOINT: 'http://localhost:8000/api',
+    API_ENDPOINT: 'https://infinite-eyrie-40606.herokuapp.com/api',
     TOKEN_KEY: 'social-dining-app-client-auth-token',
 }
