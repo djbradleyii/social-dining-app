@@ -77,7 +77,6 @@ export default class SearchPage extends React.Component{
         })
     }
     render(){
-        console.log(this.state.keyword);
         return(
             <ContextManager.Consumer>
                 {(value) => {

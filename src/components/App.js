@@ -67,7 +67,6 @@ class App extends React.Component{
   }
 
   updateEventId = (event_id) => {
-    console.log(event_id);
     this.getSelectedEvent(event_id);
   }
 

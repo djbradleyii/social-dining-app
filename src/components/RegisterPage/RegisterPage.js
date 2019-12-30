@@ -37,7 +37,6 @@ export default class RegisterPage extends React.Component{
                     bio.value = '';
                     email.value = '';
                     password.value = '';
-                    //console.log('From RegisterPage.js within form submit after AuthApiService user =', user);
                     history.push(`/signin`);
                 })
             } else {
