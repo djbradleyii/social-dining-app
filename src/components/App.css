@@ -40,5 +40,13 @@ input{
 }
 
 .error-message{
+    font-size: 14px;
     color: red;
+}
+
+.info{
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
 }
