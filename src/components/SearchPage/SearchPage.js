@@ -83,6 +83,7 @@ export default class SearchPage extends React.Component{
                     return(
                         <div>
                             <form id="search-form" onSubmit={this.handleFormSubmission}>
+                                <div className="search-info">Input a search term to search all events.</div>
                                 <div>
                                     <label htmlFor="search">Search <span className="searchCaseSensitive">(Case Sensitive):</span> </label>
                                     <input type="search" id="search" placeholder="Wine &amp; Networking" value={this.state.keyword} name="keyword" onChange={this.updateKeyword}/>
@@ -92,9 +93,9 @@ export default class SearchPage extends React.Component{
                                     <label htmlFor="event-date-search">Date:</label>
                                     <input type="date" id="event-date-search" name="eventDate" />
                                 </div> */}
-                                <div>
+{/*                                 <div>
                                     <button type="submit">Submit</button>
-                                </div>    
+                                </div>     */}
                             </form>
                             {!!this.state.events.length && this.renderContent()}
                         </div>
