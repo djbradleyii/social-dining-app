@@ -96,7 +96,7 @@ export default class RegisterPage extends React.Component{
                     <input type="email" id="email" name="email" placeholder="myemailaddress@email.com" required />
                 </div>
                 <div>
-                    <div><p>Your password must contain 1 number, 1 capital letter, 1 special character and it must be at least 8 characters long.</p></div>
+                    <div><p>Your password must contain 1 number, 1 capital letter, 1 special character (!@#$%^&amp;) and it must be at least 8 characters long.</p></div>
                     <label htmlFor="password">Password:</label>
                     <input type="password" id="password" name="password" required />
                 </div>
