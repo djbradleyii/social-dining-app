@@ -51,22 +51,23 @@ export default class RegisterPage extends React.Component{
     render(){
         return(
             <form id="register-form" onSubmit={this.handleRegSubmit}>
+                <div className="info">*Required Fields</div>
                 <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
                 <div>
-                    <label htmlFor="fname">First Name:</label>
+                    <label htmlFor="fname">*First Name:</label>
                     <input type="text" id="fname" placeholder="Ken" name="fname" required />
                 </div>
                 <div>
-                    <label htmlFor="lname">Last Name:</label>
+                    <label htmlFor="lname">*Last Name:</label>
                     <input type="text" id="lname" placeholder="Adams" name="lname" required/>
                 </div>
                 <div>
-                    <label htmlFor="dob">Birth Date:</label>
+                    <label htmlFor="dob">*Birth Date:</label>
                     <input type="date" id="dob" name="dob" required/>
                 </div>
                 <div>
                     <fieldset className="radiogroup">
-                        <legend>Gender</legend>
+                        <legend>*Gender</legend>
                         <ul className="radio">
                             <li><input type="radio" name="gender" id="male" value="Male" /><label htmlFor="male">Male</label></li>
                             <li><input type="radio" name="gender" id="Female" value="Female" defaultChecked /><label htmlFor="female">Female</label></li>
@@ -74,7 +75,7 @@ export default class RegisterPage extends React.Component{
                     </fieldset>
                 </div>
                 <div>
-                    <label htmlFor="marital_status">Status:</label>
+                    <label htmlFor="marital_status">*Marital Status:</label>
                     <select id="marital_status">
                         <option value="none" name="marital_status"></option>
                         <option value="Single" name="marital_status">Single</option>
@@ -84,7 +85,7 @@ export default class RegisterPage extends React.Component{
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="occupation">Occupation:</label>
+                    <label htmlFor="occupation">*Occupation:</label>
                     <input type="text" id="occupation" name="occupation" placeholder="Lawyer" required/>
                 </div>
                 <div>
@@ -92,16 +93,16 @@ export default class RegisterPage extends React.Component{
                     <textarea id="user-summary" name="bio"></textarea>
                 </div>
                 <div>
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email">*Email:</label>
                     <input type="email" id="email" name="email" placeholder="myemailaddress@email.com" required />
                 </div>
                 <div>
-                    <div><p>Your password must contain 1 number, 1 capital letter, 1 special character (!@#$%^&amp;) and it must be at least 8 characters long.</p></div>
-                    <label htmlFor="password">Password:</label>
+                    <div><p className="info">Your password must contain 1 number, 1 capital letter, 1 special character (!@#$%^&amp;) and it must be at least 8 characters long.</p></div>
+                    <label htmlFor="password">*Password:</label>
                     <input type="password" id="password" name="password" required />
                 </div>
                 <div>
-                    <label htmlFor="passwordVerify">Verify Password:</label>
+                    <label htmlFor="passwordVerify">*Verify Password:</label>
                     <input type="password" id="passwordVerify" name="passwordVerify" required />
                 </div>
                 <div>
