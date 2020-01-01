@@ -23,6 +23,8 @@ import UsersApiService from '../services/users-api-service';
 //import AttendeesApiService from '../services/attendees-api-service';
 import EventsApiService from '../services/events-api-service';
 import SelectedUserDetails from './SelectedUserDetails/SelectedUserDetails';
+import AccountCreated from './AccountCreated/AccountCreated';
+import LogoutSuccessful from './LogoutSuccessful/LogoutSuccessful';
 
 class App extends React.Component{
   constructor(props){
@@ -118,6 +120,8 @@ class App extends React.Component{
           <Route path='/' component={Header} />
           <main aria-live='polite'>
             <Switch>
+              <Route exact path='/registered' component={AccountCreated} />
+              <Route exact path='/logout' component={LogoutSuccessful} />
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/register' component={RegisterPage} />
               <Route exact path='/signin' component={SignInPage} />
