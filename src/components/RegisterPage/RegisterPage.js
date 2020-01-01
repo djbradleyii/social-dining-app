@@ -10,6 +10,7 @@ export default class RegisterPage extends React.Component{
     
         handleRegSubmit = (e) => {
             e.preventDefault();
+            this.setState({ error: null })
             const { fname, lname, dob, gender, marital_status, occupation, bio, email, password, passwordVerify } = e.target
             const { history } = this.props;
             
@@ -38,14 +39,19 @@ export default class RegisterPage extends React.Component{
                     email.value = '';
                     password.value = '';
                     this.context.updateErrorMessage(null)
-                    history.push(`/signin`);
+                    history.push(`/registered`);
                 })
-                .catch(error => {
-                    this.context.updateErrorMessage('Oops: '+ error.message)
+                .catch(res => {
+                    //console.dir(res);
+                    this.context.updateErrorMessage('Oops: '+ res.error)
                 })
             } else {
                 this.context.updateErrorMessage('Password must match')
             }
+        }
+
+        componentWillUnmount(){
+            this.context.updateErrorMessage(null)
         }
 
     render(){
