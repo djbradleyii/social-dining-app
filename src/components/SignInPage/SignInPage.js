@@ -24,13 +24,14 @@ export default class SignInPage extends React.Component{
             TokenService.saveAuthToken(res.authToken);
             UsersApiService.getAllEventsForUser()
             .then(usersData => {
-                ActiveUserService.saveUserData(usersData)
+                ActiveUserService.saveUserData(usersData);
             })
-            this.context.getAllEventsForUser()
+            this.context.getAllEventsForUser();
+            this.context.updateErrorMessage(null);
             history.push(`/dashboard`); 
          })
          .catch(res => {
-           this.setState({ errorMessage: res.error })
+            this.context.updateErrorMessage('Oops: '+ res.error)
          })
 
     }
