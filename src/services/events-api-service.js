@@ -10,7 +10,7 @@ const EventsApiService = {
         })
           .then(response => {
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
             return response.json();
           })
@@ -23,7 +23,7 @@ const EventsApiService = {
         })
           .then(response => {
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
             return response.json();
           })
@@ -38,7 +38,7 @@ const EventsApiService = {
         })
           .then(response =>{
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
             return response.json();
           })
@@ -52,7 +52,7 @@ const EventsApiService = {
         .then(response =>{
           if(!response.ok){
             window.location.assign('/notfound')
-            //throw new Error('Something went wrong. Please try again later.');
+            return response.json().then((responseJson) => {return Promise.reject(responseJson)})
           }
           return response.json();
         })
@@ -72,7 +72,7 @@ const EventsApiService = {
         })
           .then(response =>{
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
             return response.json();
           })
@@ -87,7 +87,7 @@ const EventsApiService = {
         })
           .then(response => {
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
           })
       },
@@ -102,7 +102,7 @@ const EventsApiService = {
         })
           .then(response =>{
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
           })
       }   

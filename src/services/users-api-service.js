@@ -10,7 +10,7 @@ const UsersApiService = {
         })
           .then(response => {
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
             return response.json();
           })
@@ -23,7 +23,7 @@ const UsersApiService = {
         })
           .then(response => {
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
             return response.json();
           })
@@ -37,7 +37,7 @@ const UsersApiService = {
         })
           .then(response =>{
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
             return response.json();
           })
@@ -55,7 +55,7 @@ const UsersApiService = {
         })
           .then(response =>{
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
             return response.json();
           })
@@ -72,7 +72,7 @@ const UsersApiService = {
         })
           .then(response =>{
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
             return response.json();
           })
@@ -88,7 +88,7 @@ const UsersApiService = {
         })
           .then(response =>{
             if(!response.ok){
-              throw new Error('Something went wrong. Please try again later.');
+              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
             }
           })
       }  
