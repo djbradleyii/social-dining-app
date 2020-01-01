@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import './LandingPage.css';
 
 function LangingPage(props){
@@ -21,4 +22,4 @@ function LangingPage(props){
     );
 }
 
-export default LangingPage;
+export default withRouter(LangingPage);
