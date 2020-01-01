@@ -35,8 +35,8 @@ export default class RegisterPage extends React.Component{
                     this.context.updateErrorMessage(null)
                     history.push(`/dashboard`);
                 })
-                .catch(error => {
-                    this.context.updateErrorMessage(error.message)
+                .catch(res => {
+                    this.context.updateErrorMessage('Oops: '+ res.error)
                 })
             }
         }
