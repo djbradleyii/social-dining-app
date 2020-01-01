@@ -36,6 +36,7 @@ export default class AddEvent extends React.Component{
     render(){
         return(
             <form onSubmit={this.handleFormSubmit} id="add-event-form">
+                <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
                 <div>
                     <label htmlFor="title">Title:</label>
                     <input type="text" id="title" placeholder="Wine & Networking" name="title" required />
