@@ -22,8 +22,8 @@ export default class EditEvent extends React.Component{
             this.context.updateErrorMessage(null);
             this.props.history.push(`/event/${event_id}`);
         })
-        .catch(error => {
-            this.context.updateErrorMessage( error.message );
+        .catch(res => {
+            this.context.updateErrorMessage('Oops: '+ res.error);
         })
     }
 
@@ -39,7 +39,7 @@ export default class EditEvent extends React.Component{
                 </div>
                 <div>
                     <label htmlFor="restaurant">Restaurant:</label>
-                    <input type="text" id="restaurant" placeholder="Water Grill" name="restaurant" required disabled/>
+                    <input type="text" id="restaurant" placeholder="Water Grill" name="restaurant" required defaultValue={eventDetails.event.restaurant} disabled/>
                 </div>
                 <div>
                     <label htmlFor="restaurant-address">Restaurant Address:</label>
