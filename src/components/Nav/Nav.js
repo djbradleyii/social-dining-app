@@ -8,7 +8,7 @@ function Nav(props){
     function handleLogoutClick(){
         TokenService.clearAuthToken();
         ActiveUserService.clearUserData();
-        props.history.push('/');
+        props.history.push('/logout');
     }
 
     function displayNav(){
@@ -19,7 +19,7 @@ function Nav(props){
                     <Link to={`/dashboard`}>Dashboard</Link>
                     <Link to='/event'>Add Event</Link>
                     <Link to='/search'>Search</Link>
-                    <Link to='/signout' onClick={handleLogoutClick}>Sign Out</Link>
+                    <Link to='/logout' onClick={handleLogoutClick}>Sign Out</Link>
                 </nav>
             );
         }else{
@@ -31,7 +31,6 @@ function Nav(props){
             );
         }
     }
-
     return(
         displayNav()
     );
