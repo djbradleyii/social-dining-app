@@ -24,11 +24,11 @@ export default class EditEvent extends React.Component{
         })
         .catch(res => {
             this.context.updateErrorMessage('Oops: '+ res.error);
+            this.context.scrollToErrorMessage();
         })
     }
 
     render(){
-        //let eventDetails = window.sessionStorage.getItem('event');
         let eventDetails = this.context.selectedEvent;
         return(
             <form onSubmit={(e) => this.handleFormSubmit(e, eventDetails.event.id)} id="add-event-form">

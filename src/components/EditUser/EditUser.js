@@ -36,7 +36,8 @@ export default class RegisterPage extends React.Component{
                     history.push(`/dashboard`);
                 })
                 .catch(res => {
-                    this.context.updateErrorMessage('Oops: '+ res.error)
+                    this.context.updateErrorMessage('Oops: '+ res.error);
+                    this.context.scrollToErrorMessage();
                 })
             }
         }
