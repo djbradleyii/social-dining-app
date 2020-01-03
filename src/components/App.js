@@ -33,7 +33,7 @@ class App extends React.Component{
       loggedInUserData: {},
       events: [],
       selectedEvent: {},
-      errorMessage: null
+      errorMessage: null,
     }
   }
 
@@ -91,6 +91,10 @@ class App extends React.Component{
         error: err.message
       });
     });
+  }
+
+  scrollToErrorMessage = () => {
+    window.scrollTo(0, 0);
   }
 
   componentDidMount(){
