@@ -31,12 +31,18 @@ export default class AddEvent extends React.Component{
         .then((event) => {
             this.context.getAllEventsForUser();
             this.props.history.push('/dashboard');
+        })        
+        .catch(res => {
+            this.context.updateErrorMessage('Oops: '+ res.error);
+            this.context.scrollToErrorMessage();
         })
     }
+    
     render(){
         return(
             <form onSubmit={this.handleFormSubmit} id="add-event-form">
                 <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
+                <div className="info"><p>Please note: Once your event is created, you will only have the ability to update the title and description.</p></div>
                 <div>
                     <label htmlFor="title">Title:</label>
                     <input type="text" id="title" placeholder="Wine & Networking" name="title" required />
