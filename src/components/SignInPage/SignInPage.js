@@ -31,7 +31,8 @@ export default class SignInPage extends React.Component{
             history.push(`/dashboard`); 
          })
          .catch(res => {
-            this.context.updateErrorMessage('Oops: '+ res.error)
+            this.context.updateErrorMessage('Oops: '+ res.error);
+            this.context.scrollToErrorMessage();
          })
 
     }
