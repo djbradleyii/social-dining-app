@@ -10,7 +10,8 @@ const ContextManager = React.createContext({
     getAllEvents: () => {},
     editEvent: () => {},
     updateError: null,
-    handleRegistrationSuccess: () => {}
+    handleRegistrationSuccess: () => {},
+    scrollToErrorMessage: () => {},
 })
 
 export default ContextManager
