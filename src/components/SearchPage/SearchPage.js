@@ -40,7 +40,7 @@ export default class SearchPage extends React.Component{
     }
 
     trimText = (text) => {
-        let desiredTextLength = 17;
+        let desiredTextLength = 6;
         if(text.length > desiredTextLength){
             text = text.substring(0, desiredTextLength) + "...";
         }
@@ -59,7 +59,7 @@ export default class SearchPage extends React.Component{
             } else {
                 populateOrganizer = <Link to={`/info/${event.organizer}`}>{event.organizer_name}</Link>;
             }
-            return <tr key={i}><td><Link to={`/event/${event.id}`}>{this.trimText(event.title)}</Link></td><td>{populateOrganizer}</td><td>{event.event_purpose}</td><td>{event.restaurant}</td><td>{moment(event.date).format('MM/DD/YY')}</td></tr>
+            return <tr key={i}><td className="clipTitleText"><Link to={`/event/${event.id}`}>{event.title}</Link></td><td className="clipOrganizerText">{populateOrganizer}</td><td className="m-hide">{event.event_purpose}</td><td className="clipRestaurantText">{event.restaurant}</td><td>{moment(event.date).format('MM/DD/YY')}</td></tr>
         })
 
         return(
@@ -70,7 +70,7 @@ export default class SearchPage extends React.Component{
                         <tr>
                             <th>Title</th>
                             <th>Organizer</th>
-                            <th>Purpose</th>
+                            <th className="m-hide">Purpose</th>
                             <th>Restaurant</th>
                             <th>Date</th>
                         </tr>
@@ -101,12 +101,7 @@ export default class SearchPage extends React.Component{
                                 <div>
                                     <label htmlFor="search">Search <span className="searchCaseSensitive">(Case Sensitive):</span> </label>
                                     <input type="search" id="search" placeholder="Wine &amp; Networking" value={this.state.keyword} name="keyword" onChange={this.updateKeyword}/>
-                                    {/* <img src="" /> */}
                                 </div>
-            {/*                     <div>
-                                    <label htmlFor="event-date-search">Date:</label>
-                                    <input type="date" id="event-date-search" name="eventDate" />
-                                </div> */}
                             </form>
                             {!!this.state.events.length && this.renderContent()}
                         </div>
