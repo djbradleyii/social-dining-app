@@ -8,13 +8,17 @@ table.event-details{
     padding: 10px;
     width: 95%;
     margin: 0 auto;
+    border-radius: 8px;
+    background-color: #fcca46;
+    box-shadow: 3px 2px 5px rgba(0,0,0,.7);
+    border: 1px solid black;
 }
 
 table.event-details th{
     font-size: 16px;
     padding-bottom: 5px;
     margin-bottom: 10px;
-    border-bottom: 2px dashed rgb(202, 193, 193);
+    border-bottom: 2px dashed rgb(0, 0, 0);
     width: 100%;
     text-align: left;
 }
@@ -28,31 +32,29 @@ table.event-details tr{
 
 table.event-details td{
     flex: 1;
-    font-size: 12px;
+    font-size: .7em;
     padding: 2px;
-}
-
-table.event-details td:nth-child(1){
-    text-align: center;
-    /*margin-top: 5px;
-    margin-bottom: 5px;*/
 }
 
 .button-group{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
-.button-container{
-    width: 200px;
+.button-container:nth-child(1){
+    margin-right: 10px;
 }
 
-div > button{
-    width: 100%;
-    height: 25px;
-    background-color: none;
+.button-container:nth-child(2){
+    margin-left: 10px;
+}
+
+.event-details-container button{
+    font-size: .9em;
+    width: 110px;
+    background-color: #fcca46;
     border: 1px solid black;
-    border-radius: 6px;
+    color: black;
 }
 
 @media only screen and (min-width: 500px) {
@@ -66,7 +68,7 @@ div > button{
         padding: 25px;
         font-size: 22px;
         border-radius: 8px;
-        background-color: #dd6e42;
+        background-color: #fcca46;
         box-shadow: 3px 2px 5px rgba(0,0,0,.7);
         border: 1px solid black;
     }
@@ -76,14 +78,15 @@ div > button{
     }
 
     .event-details-container .button-group button{
-        justify-content: space-between;
-        background-color: #dd6e42;
+        justify-content: space-evenly;
+        width: 200px;
+        background-color: #fcca46;
     }
 
     .button-container button:link, 
     .button-container button:visited, 
     .button-container button:hover, 
     .button-container button:active{
-        color: white;
+        color: black;
     }
   }

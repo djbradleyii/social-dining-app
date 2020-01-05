@@ -8,13 +8,17 @@ table.selected-user-table{
     padding: 10px;
     width: 95%;
     margin: 0 auto;
+    border-radius: 8px;
+    background-color: #fcca46;
+    box-shadow: 3px 2px 5px rgba(0,0,0,.7);
+    border: 1px solid black;
 }
 
 table.selected-user-table th{
     font-size: 16px;
     padding-bottom: 5px;
     margin-bottom: 10px;
-    border-bottom: 2px dashed rgb(202, 193, 193);
+    border-bottom: 2px dashed rgb(0, 0, 0);
     width: 100%;
     text-align: left;
 }
@@ -48,27 +52,31 @@ table.selected-user-table td:nth-child(1){
     width: 150px;
 }
 
-div > button{
+.selected-user-details button{
     width: 100%;
     height: 25px;
-    background-color: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    background-color: #4f6d7a;
     border: 1px solid black;
-    border-radius: 6px;
+    color: white;
 }
 
 @media only screen and (min-width: 500px) {
 
     table.selected-user-table, .selected-user-table .button-group{
-        width: 500px;
+        width: 400px;
         margin: 5px auto;
     }
 
     table.selected-user-table{
         padding: 25px;
         border-radius: 8px;
-        background-color: #dd6e42;
+        background-color: #fcca46;
         box-shadow: 3px 2px 4px rgba(0,0,0,.7);
         border: 1px solid black;
+        width: 375px;
+        font-size: .75rem;
     }
 
     .button-container button:link, 

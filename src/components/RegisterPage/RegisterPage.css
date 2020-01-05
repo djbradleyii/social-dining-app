@@ -15,10 +15,12 @@ input[type="radio"]{
 }
 
 .radio{
+    margin-top: 5px;
     border: 2px outset #4f6d7a;
     width: 100%;
-    /*background-color: white;*/
-    color: white;
+    background-color: #fcca46;
+    color: black;
+    padding: 5px;
 }
 
 #register-form fieldset{
@@ -44,7 +46,7 @@ input[type="radio"]{
 
 @media only screen and (min-width: 400px) {
     #register-form{
-        width: 65%;
+        width: 75%;
         padding: 25px;
     }
 

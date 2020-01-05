@@ -18,6 +18,15 @@ textarea{
     width: 25%;
 }
 
+.event-date select, .event-time select{
+    font-size: .7em;
+    margin-right: 2px;
+}  
+
+.event-date select{
+    width: 70px;
+}
+
 @media only screen and (min-width: 500px) {
     #add-event-form{
         width: 500px;
@@ -31,5 +40,8 @@ textarea{
         font-size: 20px;
         width: 200px;
         height: 35px;
+    }
+    .event-date select{
+        width: 125px;
     }
   }
