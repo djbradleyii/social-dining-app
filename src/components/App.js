@@ -78,6 +78,12 @@ class App extends React.Component{
     });
   }
 
+  clearErrorMessage = () => {
+    this.setState({
+      errorMessage: null
+    });
+  }
+
   getAllEvents = () => {
     const { keyword } = this.state;
     EventsApiService.getAllEvents(keyword)
@@ -116,7 +122,9 @@ class App extends React.Component{
       getAllEvents: this.getAllEvents,
       getAllEventsForUser: this.getAllEventsForUser, 
       updateErrorMessage: this.updateErrorMessage,
-      updateEventId: this.updateEventId
+      clearErrorMessage: this.clearErrorMessage,
+      updateEventId: this.updateEventId,
+      scrollToErrorMessage: this.scrollToErrorMessage
     }
     return(
       <ContextManager.Provider value={contextValue}>
