@@ -70,6 +70,7 @@ class EventDetails extends React.Component{
                     let activeuser = ActiveUserService.getUserData();
                     let user = activeuser.user;
                     let isRSVP = false;
+
                         if(value.selectedEvent.hasOwnProperty('event')){ 
                             selectedEvent = value.selectedEvent;
                             userId = user.id;
@@ -107,6 +108,9 @@ class EventDetails extends React.Component{
                                     </tr>
                                     <tr>
                                         <td>Date:</td><td>{ selectedEvent ? moment(selectedEvent.event.date).format('MM/DD/YY') : 'Loading...' }</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time:</td><td>{ selectedEvent ? moment(selectedEvent.event.time, 'hh:mm A').format('hh:mm A') : 'Loading...' }</td>
                                     </tr>
                                     <tr>
                                         <td>Attendees:</td><td>{selectedEvent ? selectedEvent.attendees.length : 'Loading...'}</td>
