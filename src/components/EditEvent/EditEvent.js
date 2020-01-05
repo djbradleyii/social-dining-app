@@ -19,7 +19,7 @@ export default class EditEvent extends React.Component{
         EventsApiService.updateEventById(event_id, eventUpdates)
         .then((event) => {
             this.context.getAllEventsForUser();
-            this.context.updateErrorMessage(null);
+            this.context.clearErrorMessage();
             this.props.history.push(`/event/${event_id}`);
         })
         .catch(res => {
