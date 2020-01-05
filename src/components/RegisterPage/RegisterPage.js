@@ -38,7 +38,7 @@ export default class RegisterPage extends React.Component{
                     bio.value = '';
                     email.value = '';
                     password.value = '';
-                    this.context.updateErrorMessage(null)
+                    this.context.clearErrorMessage();
                     history.push(`/registered`);
                 })
                 .catch(res => {
@@ -53,7 +53,7 @@ export default class RegisterPage extends React.Component{
         }
 
         componentWillUnmount(){
-            this.context.updateErrorMessage(null)
+            this.context.clearErrorMessage();
         }
 
     render(){
@@ -63,11 +63,11 @@ export default class RegisterPage extends React.Component{
                 <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
                 <div>
                     <label htmlFor="fname">*First Name:</label>
-                    <input type="text" id="fname" placeholder="Ken" name="fname" required />
+                    <input type="text" id="fname" placeholder="ex. Ken" name="fname" required />
                 </div>
                 <div>
                     <label htmlFor="lname">*Last Name:</label>
-                    <input type="text" id="lname" placeholder="Adams" name="lname" required/>
+                    <input type="text" id="lname" placeholder="ex. Adams" name="lname" required/>
                 </div>
                 <div>
                     <label htmlFor="dob">*Birth Date:</label>
@@ -94,7 +94,7 @@ export default class RegisterPage extends React.Component{
                 </div>
                 <div>
                     <label htmlFor="occupation">*Occupation:</label>
-                    <input type="text" id="occupation" name="occupation" placeholder="Lawyer" required/>
+                    <input type="text" id="occupation" name="occupation" placeholder="ex. Lawyer" required/>
                 </div>
                 <div>
                     <label htmlFor="user-summary">Bio:</label>
@@ -102,7 +102,7 @@ export default class RegisterPage extends React.Component{
                 </div>
                 <div>
                     <label htmlFor="email">*Email:</label>
-                    <input type="email" id="email" name="email" placeholder="myemailaddress@email.com" required />
+                    <input type="email" id="email" name="email" placeholder="ex. myemailaddress@email.com" required />
                 </div>
                 <div>
                     <div><p className="info info-password">Your password must contain 1 number, 1 capital letter, 1 special character (!@#$%^&amp;) and it must be at least 8 characters long.</p></div>
