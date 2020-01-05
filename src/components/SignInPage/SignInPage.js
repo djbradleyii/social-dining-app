@@ -27,7 +27,7 @@ export default class SignInPage extends React.Component{
                 ActiveUserService.saveUserData(usersData);
             })
             this.context.getAllEventsForUser();
-            this.context.updateErrorMessage(null);
+            this.context.clearErrorMessage();
             history.push(`/dashboard`); 
          })
          .catch(res => {
