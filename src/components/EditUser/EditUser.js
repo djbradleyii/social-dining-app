@@ -32,7 +32,7 @@ export default class RegisterPage extends React.Component{
                     occupation.value = '';
                     bio.value = '';
                     this.context.getAllEventsForUser();
-                    this.context.updateErrorMessage(null)
+                    this.context.clearErrorMessage();
                     history.push(`/dashboard`);
                 })
                 .catch(res => {
@@ -60,7 +60,7 @@ export default class RegisterPage extends React.Component{
                         <legend>Gender</legend>
                         <ul className="radio">
                             <li><input type="radio" name="gender" id="male" value="Male" defaultChecked={userData.gender === 'Male'} /><label htmlFor="male">Male</label></li>
-                            <li><input type="radio" name="gender" id="Female" value="Female" defaultChecked={userData.gender === 'Female'} /><label htmlFor="female">Female</label></li>
+                            <li><input type="radio" name="gender" id="female" value="Female" defaultChecked={userData.gender === 'Female'} /><label htmlFor="female">Female</label></li>
                         </ul>
                     </fieldset>
                 </div>
