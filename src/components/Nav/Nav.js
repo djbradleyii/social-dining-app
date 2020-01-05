@@ -24,9 +24,9 @@ function Nav(props){
             );
         }else{
             return(
-                <nav role="navigation">
-                    <Link to='/signin' >Sign In</Link>
-                    <Link to='/register' >Register</Link>
+                <nav role="navigation" className="not-logged-in">
+                    <Link to='/signin' className="link-sign-in">Sign In</Link>
+                    <Link to='/register' className="link-register">Register</Link>
                 </nav>
             );
         }
