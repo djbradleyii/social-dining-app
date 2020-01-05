@@ -86,7 +86,7 @@ class EventDetails extends React.Component{
                             }
                         }
                     return(
-                        <section>
+                        <section className="event-details-container">
                             <table className="event-details">
                                 <thead><tr><th>{ selectedEvent ? selectedEvent.event.title : 'Loading...' }</th></tr></thead>
                                 <tbody>

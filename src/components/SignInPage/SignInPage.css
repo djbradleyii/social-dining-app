@@ -13,14 +13,14 @@
     #signin-form{
         width: 500px;
         padding: 25px;
-        font-size: 25px;
+        font-size: 20px;
     }
     #signin-form input{
         height: 35px;
     }
     #signin-form button{
-        font-size: 20px;
-        width: 200px;
+        margin-top: 10px;
+        width: 100px;
         height: 35px;
     }
   }

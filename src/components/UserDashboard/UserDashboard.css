@@ -1,14 +1,19 @@
 .user-dashboard{
     display: flex;
     flex-direction: column;
+    font-size: .7rem;
 }
 
 .user-details{
-    flex: 1;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #dd6e42;
+    color: white;
+    box-shadow: 3px 2px 5px rgba(0,0,0,.6);
 }
 
 .user-upcoming-events{
-    flex: 1;
     margin: 0 auto;
     padding: 2px;
     margin-top: 15px;
@@ -20,12 +25,13 @@ table.user-details-table{
 }
 
 table.user-details-table th{
-    font-size: 16px;
     padding-bottom: 5px;
     margin-bottom: 10px;
-    border-bottom: 2px dashed rgb(202, 193, 193);
+    border-bottom: 2px dashed rgb(250, 250, 250);
     width: 100%;
     text-align: left;
+    font-size: .85rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.8);
 }
 
 table.user-details-table tr{
@@ -35,38 +41,24 @@ table.user-details-table tr{
 }
 
 table.user-details-table td{
-    flex: 1;
+    flex: 1;    
     padding: 2px;
 }
 
 table.user-details-table td:nth-child(2){
-    flex: 2;
+    flex: 1;
     padding-left: 5px;
 }
 
 .user-details table{
     margin: 0 auto;
-    border: 1px solid black;
     padding: 2px;
     width: 100%;
 }
 
 .user-details th{
-width: 100%;
-font-size: 18px;
+    width: 100%;
 }
-
-.user-dashboard section{
-    padding: 5px;
-}
-.user-dashboard section:nth-child(1){
-    font-size: .7em;
-}
-.user-dashboard section:nth-child(2){
-    font-size: .8em;
-}
-
-
 
 /* UPCOMING EVENTS TABLE */
 
@@ -75,65 +67,125 @@ font-size: 18px;
     width: 100%;
     border-collapse: collapse;
 }
+
 .user-upcoming-events-table thead{
     display: inline-block;
     width: 100%;
-    font-size: 20px;
     margin-bottom: 8px;
 }
+
 .user-upcoming-events-table tbody{
     display: block;
     width: 100%;
-    font-size: 10px;
 }
 
 .user-upcoming-events-table tbody th{
-    font-size: 12px;
     padding: 5px;
     width: 100%;
 }
+
+.user-upcoming-events-table th{
+    text-shadow: 1px 1px 2px rgba(0,0,0,.8);
+}
+
 .user-upcoming-events-table tbody tr{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .user-upcoming-events-table tbody tr td{
     flex: 1;
-    font-size: 10px;
     padding-left: 2px;
     text-align: center;
 }
 
-@media only screen and (min-width: 600px) {
+.action-btn{
+    margin-top: 0;
+    background-color: #dd6e42;
+    width: 65px;
+    padding: 2px;
+    border: 1px solid black;
+} 
+
+.action-btn:link, .action-btn:visited, .action-btn:hover, .action-btn:active{
+    color: white;
+} 
+
+.action-btn:hover{
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.6);
+} 
+
+.m-hide{
+    display: none;
+}
+
+@media only screen and (min-width: 320px) {
+    .user-details{
+        width: 320px;
+        padding: 25px;
+    }
+}
+
+@media only screen and (min-width: 500px){
+    .user-details{
+        width: 375px;
+        padding: 25px;
+        border: 1px solid black;
+        font-size: .75rem;
+    }
+
+    .action-btn{
+        width: 75px;
+    } 
+
+    .user-upcoming-events{
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 700px){
+    .m-hide{
+        display: inherit;
+    }
+}
+
+@media only screen and (min-width: 950px) {
+
+    .user-upcoming-events-table tbody th{
+        font-size: .9rem;
+    }
+
+    .user-upcoming-events-table thead th{
+        font-size: 1rem;
+    }
+
     .user-dashboard{
         flex-direction: row;
+        font-size: .8rem;
     }
 
     .user-upcoming-events{
-        flex: 1;
+        flex: 3;
         margin-top: 0;
         margin-left: 25px;
     }
 
-    .user-dashboard section:nth-child(1){
-        font-size: 1em;
-    }
-    .user-dashboard section:nth-child(2){
-        font-size: 1.3em;
-    }
-
     .user-details{
-        font-size: 10px;
+        flex: 2;
     }
     
     table.user-details-table{
         padding: 10px;
     }
-    
+
     table.user-details-table th{
-        font-size: 23px;
+        font-size: 1rem;
     }
+    
 
 /* UPCOMING EVENTS TABLE */
 
@@ -145,34 +197,13 @@ font-size: 18px;
 .user-upcoming-events-table thead{
     display: inline-block;
     width: 100%;
-    font-size: 22px;
     margin-bottom: 8px;
-}
-
-
-.user-upcoming-events-table tbody th{
-    font-size: 16px;
-    padding: 5px;
-    width: 100%;
-}
-.user-upcoming-events-table tbody tr{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
 }
 
 .user-upcoming-events-table tbody tr td{
     flex: 1;
-    font-size: 14px;
     padding-left: 2px;
     text-align: center;
 }
 
   }
-
-@media only screen and (min-width: 800px) {
-    .user-upcoming-events{
-        flex: 2;
-    }
-
-}

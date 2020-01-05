@@ -78,7 +78,7 @@ export default class RegisterPage extends React.Component{
                         <legend>*Gender</legend>
                         <ul className="radio">
                             <li><input type="radio" name="gender" id="male" value="Male" /><label htmlFor="male">Male</label></li>
-                            <li><input type="radio" name="gender" id="Female" value="Female" defaultChecked /><label htmlFor="female">Female</label></li>
+                            <li><input type="radio" name="gender" id="female" value="Female" defaultChecked /><label htmlFor="female">Female</label></li>
                         </ul>
                     </fieldset>
                 </div>
@@ -105,7 +105,7 @@ export default class RegisterPage extends React.Component{
                     <input type="email" id="email" name="email" placeholder="myemailaddress@email.com" required />
                 </div>
                 <div>
-                    <div><p className="info">Your password must contain 1 number, 1 capital letter, 1 special character (!@#$%^&amp;) and it must be at least 8 characters long.</p></div>
+                    <div><p className="info info-password">Your password must contain 1 number, 1 capital letter, 1 special character (!@#$%^&amp;) and it must be at least 8 characters long.</p></div>
                     <label htmlFor="password">*Password:</label>
                     <input type="password" id="password" name="password" required />
                 </div>

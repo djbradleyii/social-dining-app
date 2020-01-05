@@ -54,3 +54,36 @@ div > button{
     border: 1px solid black;
     border-radius: 6px;
 }
+
+@media only screen and (min-width: 500px) {
+
+    table.event-details, .event-details-container .button-group{
+        width: 500px;
+        margin: 5px auto;
+    }
+
+    table.event-details{
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 8px;
+        background-color: #dd6e42;
+        box-shadow: 3px 2px 5px rgba(0,0,0,.7);
+        border: 1px solid black;
+    }
+
+    .event-details-container .button-group{
+        justify-content: space-between;
+    }
+
+    .event-details-container .button-group button{
+        justify-content: space-between;
+        background-color: #dd6e42;
+    }
+
+    .button-container button:link, 
+    .button-container button:visited, 
+    .button-container button:hover, 
+    .button-container button:active{
+        color: white;
+    }
+  }
