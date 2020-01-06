@@ -1,5 +1,4 @@
 import React from 'react';
-import './EditEvent.css';
 import EventsApiService from '../../services/events-api-service';
 import ContextManager from '../../context/context-manager';
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import './EditUser.css';
 import ContextManager from '../../context/context-manager';
 import UsersApiService from '../../services/users-api-service';
 import ActiveUserService from '../../services/activeuser-service';

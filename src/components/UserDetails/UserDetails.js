@@ -1,5 +1,4 @@
 import React from 'react';
-import './UserDetails.css';
 import { withRouter } from 'react-router-dom';
 import ContextManager from '../../context/context-manager';
 import ActiveUserService from '../../services/activeuser-service';
