@@ -123,24 +123,24 @@ export default class AddEvent extends React.Component{
             <>
                 <div className="event-date">
                     <label>Date:</label>
-                    <select className="date-month" name="month">
+                    <select className="date-month" name="month" required>
                     <option value="None">Select Month:</option>
                         {monthOptions}
                     </select>
-                    <select className="date-day" name="day">
+                    <select className="date-day" name="day" required>
                     <option value="None">Select Day:</option>
                         {dayOptions}
                     </select>
-                    <select className="date-year" name="year">
+                    <select className="date-year" name="year" required>
                     <option value="None">Select Year:</option>
                         {yearOptions}
                     </select>
                 </div>
                 <div className="event-time">
                     <label>Time:</label>
-                    <select className="time-hour" name="hour">{hoursOptions}</select>
-                    <select className="time-minute" name="minute">{minutesOptions}</select>
-                    <select className="time-meridiem" name="meridiem">{meridiemOptions}</select>
+                    <select className="time-hour" name="hour" required>{hoursOptions}</select>
+                    <select className="time-minute" name="minute" required>{minutesOptions}</select>
+                    <select className="time-meridiem" name="meridiem" required>{meridiemOptions}</select>
                 </div>
             </>
         )
@@ -153,7 +153,7 @@ export default class AddEvent extends React.Component{
                 <div className="info"><p>Please note: Once your event is created, you will only have the ability to update the title and description.</p></div>
                 <div>
                     <label htmlFor="title">Title:</label>
-                    <input type="text" id="title" placeholder="ex. Wine & Networking" name="title"  required  />
+                    <input type="text" id="title" placeholder="ex. Wine &amp; Networking" name="title"  required  />
                 </div>
                 <div>
                     <label htmlFor="restaurant">Restaurant:</label>

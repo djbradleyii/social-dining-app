@@ -83,8 +83,7 @@ export default class RegisterPage extends React.Component{
                 </div>
                 <div>
                     <label htmlFor="marital_status">*Marital Status:</label>
-                    <select id="marital_status">
-                        <option value="none" name="marital_status"></option>
+                    <select id="marital_status" required>
                         <option value="Single" name="marital_status">Single</option>
                         <option value="Married" name="marital_status">Married</option>
                         <option value="Divorced" name="marital_status">Divorced</option>
