@@ -16,11 +16,7 @@ import './App.css';
 import ContextManager from '../context/context-manager';
 import TokenService from '../services/token-service';
 import ActiveUserService from '../services/activeuser-service';
-//import config from '../config';
-//import AuthApiService from '../services/auth-api-service';
 import UsersApiService from '../services/users-api-service';
-//import EventsApiService from '../services/events-api-service';
-//import AttendeesApiService from '../services/attendees-api-service';
 import EventsApiService from '../services/events-api-service';
 import SelectedUserDetails from './SelectedUserDetails/SelectedUserDetails';
 import AccountCreated from './AccountCreated/AccountCreated';
@@ -68,10 +64,6 @@ class App extends React.Component{
     this.getAllEvents();
   }
 
-  updateEventId = (event_id) => {
-    this.getSelectedEvent(event_id);
-  }
-
   updateErrorMessage = (error) => {
     this.setState({
       errorMessage: error
@@ -116,14 +108,12 @@ class App extends React.Component{
       loggedInUserData: this.state.loggedInUserData,
       events: this.state.events,
       errorMessage: this.state.errorMessage,
-      eventAttendees: this.state.eventAttendees,
       getSelectedEvent: this.getSelectedEvent,
       selectedEvent: this.state.selectedEvent,
       getAllEvents: this.getAllEvents,
       getAllEventsForUser: this.getAllEventsForUser, 
       updateErrorMessage: this.updateErrorMessage,
       clearErrorMessage: this.clearErrorMessage,
-      updateEventId: this.updateEventId,
       scrollToErrorMessage: this.scrollToErrorMessage
     }
     return(

@@ -21,17 +21,9 @@ export default class UserDashboard extends React.Component{
     removeRSVP = (e, event_id) => {
         AttendeesApiService.deleteAttendee(event_id)
         .then((res) => {
-            this.context.getSelectedEvent(event_id)
+            this.context.getSelectedEvent(event_id);
             this.context.getAllEventsForUser();
         })
-    }
-
-    trimText = (text) => {
-        let desiredTextLength = 6;
-        if(text.length > desiredTextLength){
-            text = text.substring(0, desiredTextLength) + "...";
-        }
-        return text;
     }
 
     render(){
@@ -61,7 +53,7 @@ export default class UserDashboard extends React.Component{
                                     } else {
                                         let eventId = event.event_id;
                                         populateOrganizer = <Link to={`/info/${event.organizer_id}` }>{event.organizer}</Link>;
-                                        actionButton = <button className="action-btn" onClick={(e) => this.removeRSVP(e, eventId)}>Remove RSVP</button>
+                                        actionButton = <button className="action-btn" onClick={(e) => this.removeRSVP(e, eventId)}>Remove RSVP</button>;
                                     } 
                                     return <tr key={i}><td className="clipTitleText"><Link to={`/event/${event.event_id}`}>{event.title}</Link></td><td className="clipOrganizerText">{populateOrganizer}</td><td className="m-hide">{event.event_purpose}</td><td className="clipRestaurantText">{event.restaurant}</td><td className="m-hide">{moment(event.date).format('MM/DD/YY')}</td><td>{actionButton}</td></tr>;
                                 });

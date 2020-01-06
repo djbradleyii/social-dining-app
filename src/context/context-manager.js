@@ -6,11 +6,8 @@ const ContextManager = React.createContext({
     selectedEvent: {},
     errorMessage: null,
     getAllUsers: () => {},
-    deleteUser: () => {},
     getAllEvents: () => {},
-    editEvent: () => {},
     updateError: null,
-    handleRegistrationSuccess: () => {},
     scrollToErrorMessage: () => {},
 })
 

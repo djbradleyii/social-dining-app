@@ -24,7 +24,7 @@ class UserDetails extends React.Component{
                         activeuser = ActiveUserService.getUserData();
                         user = activeuser.user;
                         nameDisplay = user.fname + ' ' + user.lname.charAt(0) + '.';
-                    user.fullName = nameDisplay
+                         user.fullName = nameDisplay;
                     }
 
                         return(

@@ -9,7 +9,7 @@ export default class RegisterPage extends React.Component{
     static contextType = ContextManager;
         handleRegSubmit = (e) => {
             e.preventDefault();
-            const { fname, lname, marital_status, occupation, bio, gender } = e.target
+            const { fname, lname, marital_status, occupation, bio, gender } = e.target;
             const { history } = this.props;
             let userUpdates = {
                 fname: fname.value,

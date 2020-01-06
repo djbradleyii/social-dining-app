@@ -39,14 +39,6 @@ export default class SearchPage extends React.Component{
         }, this.updateEventList)
     }
 
-    trimText = (text) => {
-        let desiredTextLength = 6;
-        if(text.length > desiredTextLength){
-            text = text.substring(0, desiredTextLength) + "...";
-        }
-        return text;
-    }
-
     renderContent(){
         let events = this.state.events;
         let populateOrganizer;
@@ -59,7 +51,7 @@ export default class SearchPage extends React.Component{
             } else {
                 populateOrganizer = <Link to={`/info/${event.organizer}`}>{event.organizer_name}</Link>;
             }
-            return <tr key={i}><td className="clipTitleText"><Link to={`/event/${event.id}`}>{event.title}</Link></td><td className="clipOrganizerText">{populateOrganizer}</td><td className="m-hide">{event.event_purpose}</td><td className="clipRestaurantText">{event.restaurant}</td><td>{moment(event.date).format('MM/DD/YY')}</td></tr>
+            return <tr key={i}><td className="clipTitleText"><Link to={`/event/${event.id}`}>{event.title}</Link></td><td className="clipOrganizerText">{populateOrganizer}</td><td className="m-hide">{event.event_purpose}</td><td className="clipRestaurantText">{event.restaurant}</td><td>{moment(event.date).format('MM/DD/YY')}</td></tr>;
         })
 
         return(

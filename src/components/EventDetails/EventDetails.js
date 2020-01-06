@@ -25,7 +25,7 @@ class EventDetails extends React.Component{
         .then((event) => {
             this.context.getSelectedEvent(event_id);
         })
-        history.push(`/edit/event/${event_id}`)
+        history.push(`/edit/event/${event_id}`);
     }
 
 
@@ -43,7 +43,7 @@ class EventDetails extends React.Component{
     removeRSVP = (e, event_id) => {
         AttendeesApiService.deleteAttendee(event_id)
         .then((res) => {
-            this.context.getSelectedEvent(event_id)
+            this.context.getSelectedEvent(event_id);
             this.context.getAllEventsForUser();
         })
     }
@@ -76,14 +76,14 @@ class EventDetails extends React.Component{
                             userId = user.id;
                             isOwnerOfEvent = selectedEvent.event.organizer === userId;
                             isRSVP = value.selectedEvent.attendees.find((attendee) => {
-                                return parseInt(attendee.user_id) === parseInt(user.id)
+                                return parseInt(attendee.user_id) === parseInt(user.id);
                             }) 
                             if(isOwnerOfEvent){
                                 buttons = <div className="button-group"><div className="button-container"><button onClick={(e) => this.editEvent(e, parseInt(selectedEvent.event.id))}>Edit</button></div><div className="button-container"><button onClick={(e) => this.deleteEvent(e, parseInt(selectedEvent.event.id))}>Delete</button></div></div>;    
                             } else if(isRSVP){
                                 buttons = <div className="button-group"><div className="button-container"><button onClick={(e) => this.removeRSVP(e, parseInt(selectedEvent.event.id))}>Cancel RSVP</button></div><div className="button-container"><button onClick={() => this.props.history.goBack(-1)}>Back</button></div></div>;
                             } else if(!isRSVP){
-                                buttons = <div className="button-group"><div className="button-container"><button onClick={(e) => this.addRSVP(e, parseInt(selectedEvent.event.id))}>RSVP</button></div><div className="button-container"><button onClick={() => this.props.history.goBack(-1)}>Back</button></div></div>
+                                buttons = <div className="button-group"><div className="button-container"><button onClick={(e) => this.addRSVP(e, parseInt(selectedEvent.event.id))}>RSVP</button></div><div className="button-container"><button onClick={() => this.props.history.goBack(-1)}>Back</button></div></div>;
                             }
                         }
                     return(
