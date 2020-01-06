@@ -71,10 +71,6 @@ label[for="search"]{
     padding-bottom: 5px;
 }
 
-/* .events-list-table tbody tr:nth-child(even){
-    background-color: #fcca46;
-} */
-
 .events-list-table tbody tr td{
     flex: 1;
     padding-left: 5px;

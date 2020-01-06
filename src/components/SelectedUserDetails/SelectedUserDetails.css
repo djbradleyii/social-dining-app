@@ -27,7 +27,6 @@ table.selected-user-table tr{
     display: flex;
     flex-direction: row;
     margin-bottom: 2px;
-    /*flex-direction: column*/
 }
 
 table.selected-user-table td{
@@ -38,8 +37,6 @@ table.selected-user-table td{
 
 table.selected-user-table td:nth-child(1){
     text-align: center;
-    /*margin-top: 5px;
-    margin-bottom: 5px;*/
 }
 
 .selected-user-table .button-group{
