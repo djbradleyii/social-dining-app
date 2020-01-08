@@ -7,11 +7,10 @@ import App from './components/App';
 it('renders App Component without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-  <BrowserRouter>
-    <App/>
-  </BrowserRouter>
-  , div);
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+    div,
+  );
   ReactDOM.unmountComponentAtNode(div);
 });
-
-

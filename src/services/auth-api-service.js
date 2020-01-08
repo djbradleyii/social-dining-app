@@ -1,4 +1,4 @@
-import config from '../config'
+import config from '../config';
 
 const AuthApiService = {
   postLogin(credentials) {
@@ -9,29 +9,29 @@ const AuthApiService = {
       },
       body: JSON.stringify(credentials),
     })
-      .then(response =>{
-        if(!response.ok){
-          return response.json().then((responseJson) => {return Promise.reject(responseJson)})
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((responseJson) => Promise.reject(responseJson));
         }
         return response.json();
-      })
+      });
   },
-   postUser(user) {
-     return fetch(`${config.API_ENDPOINT}/users`, {
-       method: 'POST',
-       headers: {
-         'content-type': 'application/json',
-       },
-       body: JSON.stringify(user),
-     })
-      .then(response =>{
-        if(!response.ok){
-          return response.json().then((responseJson) => {return Promise.reject(responseJson)})
+  postUser(user) {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((responseJson) => Promise.reject(responseJson));
         }
         return response.json();
-      })
-   },
-   getUserId(user) {
+      });
+  },
+  getUserId(user) {
     return fetch(`${config.API_ENDPOINT}/users`, {
       method: 'GET',
       headers: {
@@ -39,13 +39,13 @@ const AuthApiService = {
       },
       body: JSON.stringify(user),
     })
-      .then(response =>{
-        if(!response.ok){
-          return response.json().then((responseJson) => {return Promise.reject(responseJson)})
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((responseJson) => Promise.reject(responseJson));
         }
         return response.json();
-      })
+      });
   },
-}
+};
 
-export default AuthApiService
+export default AuthApiService;

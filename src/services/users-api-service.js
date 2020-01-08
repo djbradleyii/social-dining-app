@@ -1,97 +1,97 @@
-import TokenService from '../services/token-service'
-import config from '../config'
+import TokenService from './token-service';
+import config from '../config';
 
 const UsersApiService = {
-    getAllUsers() {
-        return fetch(`${config.API_ENDPOINT}/users`, {
-            headers: {
-                'authorization': `Bearer ${TokenService.getAuthToken()}`
-            },
-        })
-          .then(response => {
-            if(!response.ok){
-              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
-            }
-            return response.json();
-          })
+  getAllUsers() {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      headers: {
+        authorization: `Bearer ${TokenService.getAuthToken()}`,
       },
-      getUserById(user_id) {
-        return fetch(`${config.API_ENDPOINT}/users/${user_id}`, {
-            headers: {
-                'authorization': `Bearer ${TokenService.getAuthToken()}`
-            },
-        })
-          .then(response => {
-            if(!response.ok){
-              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
-            }
-            return response.json();
-          })
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((responseJson) => Promise.reject(responseJson));
+        }
+        return response.json();
+      });
+  },
+  getUserById(user_id) {
+    return fetch(`${config.API_ENDPOINT}/users/${user_id}`, {
+      headers: {
+        authorization: `Bearer ${TokenService.getAuthToken()}`,
       },
-      getAllEventsForUser() {
-          //fetch events for the individual user
-        return fetch(`${config.API_ENDPOINT}/users/all/events`, {
-            headers: {
-                'authorization': `Bearer ${TokenService.getAuthToken()}`
-            },
-        })
-          .then(response =>{
-            if(!response.ok){
-              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
-            }
-            return response.json();
-          })
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((responseJson) => Promise.reject(responseJson));
+        }
+        return response.json();
+      });
+  },
+  getAllEventsForUser() {
+    // fetch events for the individual user
+    return fetch(`${config.API_ENDPOINT}/users/all/events`, {
+      headers: {
+        authorization: `Bearer ${TokenService.getAuthToken()}`,
       },
-      postUser(newUser) {
-        return fetch(`${config.API_ENDPOINT}/users`, {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-            'authorization': `Bearer ${TokenService.getAuthToken()}`,
-          },
-          body: JSON.stringify({
-            newUser,
-          }),
-        })
-          .then(response =>{
-            if(!response.ok){
-              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
-            }
-            return response.json();
-          })
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((responseJson) => Promise.reject(responseJson));
+        }
+        return response.json();
+      });
+  },
+  postUser(newUser) {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${TokenService.getAuthToken()}`,
       },
-      deleteUser() {
-        return fetch(`${config.API_ENDPOINT}/users`, {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-            'authorization': `Bearer ${TokenService.getAuthToken()}`,
-          },
-          body: JSON.stringify({
-          }),
-        })
-          .then(response =>{
-            if(!response.ok){
-              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
-            }
-            return response.json();
-          })
+      body: JSON.stringify({
+        newUser,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((responseJson) => Promise.reject(responseJson));
+        }
+        return response.json();
+      });
+  },
+  deleteUser() {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${TokenService.getAuthToken()}`,
       },
-      updateUserById(userUpdates) {
-        return fetch(`${config.API_ENDPOINT}/users`, {
-          method: 'PATCH',
-          headers: {
-            'content-type': 'application/json',
-            'authorization': `Bearer ${TokenService.getAuthToken()}`,
-          },
-          body: JSON.stringify(userUpdates),
-        })
-          .then(response =>{
-            if(!response.ok){
-              return response.json().then((responseJson) => {return Promise.reject(responseJson)})
-            }
-          })
-      }  
-}
+      body: JSON.stringify({
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((responseJson) => Promise.reject(responseJson));
+        }
+        return response.json();
+      });
+  },
+  updateUserById(userUpdates) {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify(userUpdates),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((responseJson) => Promise.reject(responseJson));
+        }
+      });
+  },
+};
 
 export default UsersApiService;

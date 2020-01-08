@@ -4,12 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 import LandingPage from './LandingPage';
 
 it.only('renders Landing Page Component without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(
-      <BrowserRouter>
-        <LandingPage />
-      </BrowserRouter>
-      , div
-    );
-    ReactDOM.unmountComponentAtNode(div);
-  });
+  const div = document.createElement('div');
+  ReactDOM.render(
+    <BrowserRouter>
+      <LandingPage />
+    </BrowserRouter>,
+    div,
+  );
+  ReactDOM.unmountComponentAtNode(div);
+});

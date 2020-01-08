@@ -4,11 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 import Nav from './Nav';
 
 it('renders App Component without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(
+  const div = document.createElement('div');
+  ReactDOM.render(
     <BrowserRouter>
-        <Nav />
-    </BrowserRouter>
-    , div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
+      <Nav />
+    </BrowserRouter>,
+    div,
+  );
+  ReactDOM.unmountComponentAtNode(div);
+});

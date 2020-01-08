@@ -4,11 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 import UserDetails from './UserDetails';
 
 it.only('renders App Component without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(
+  const div = document.createElement('div');
+  ReactDOM.render(
     <BrowserRouter>
-        <UserDetails />
-    </BrowserRouter>
-    , div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
+      <UserDetails />
+    </BrowserRouter>,
+    div,
+  );
+  ReactDOM.unmountComponentAtNode(div);
+});
