@@ -17,7 +17,24 @@ Create social dining events, such as Singles night, Game night, Networking or So
 	- Case Sensitive Keyword Search
 	- Click Title to view event details
 	- Click Organizer to view organizer information
-	
+
+
+## Built with
+### Front-End
+* HTML5
+* CSS3
+* JavaScript/ES6
+* ReactJS
+* [RESTful API](https://github.com/djbradleyii/social-dining-app-api)
+### [Back-End](https://github.com/djbradleyii/social-dining-app-api)
+* NodeJS
+* ExpressJS
+* PostgreSQL
+
+## Demo
+
+- [Live Demo](https://social-dining-app.now.sh/)
+
 ## Screenshots
 Landing Page:
 ![Landing Page](screenshots/landing_page.png)
@@ -57,19 +74,3 @@ Logged Out:
 
 Error:  
 ![Error](screenshots/error.png)
-
-## Built with
-### Front-End
-* HTML5
-* CSS3
-* JavaScript/ES6
-* ReactJS
-* [RESTful API](https://github.com/djbradleyii/social-dining-app-api)
-### [Back-End](https://github.com/djbradleyii/social-dining-app-api)
-* NodeJS
-* ExpressJS
-* PostgreSQL
-
-## Demo
-
-- [Live Demo](https://social-dining-app.now.sh/)
