@@ -45,11 +45,16 @@ Error:
 ![Error](screenshots/error.png)
 
 ## Built with
+### Front-End
 * HTML5
 * CSS3
 * JavaScript/ES6
 * ReactJS
 * [RESTful API](https://github.com/djbradleyii/social-dining-app-api)
+### [Back-End](https://github.com/djbradleyii/social-dining-app-api)
+* NodeJS
+* ExpressJS
+* PostgreSQL
 
 ### Features:
 - Responsive Design
