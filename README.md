@@ -38,7 +38,7 @@ Event Details:
 Event Organizer Details:
 ![Event Organizer Details](screenshots/event_organizer_details.png)
 
-Logged Out:
+Logged Out:  
 ![Logged Out](screenshots/logged_out.png)
 
 Error:
