@@ -4,6 +4,20 @@ If you have a fear of networking or seek to expand your social circle, this app 
 
 Create social dining events, such as Singles night, Game night, Networking or Social with your own creative brand of social dining experience. The goal is to have fun, eat delicious food and mingle with others.  
 
+## Features:
+- Responsive Design
+- Accessible Design
+- Register for an account
+- Secure Signin
+- User Dashboard
+  - Edit User Details
+  - View all upcoming events you created or plan to attend
+- Add an Event
+- Search All Events
+	- Case Sensitive Keyword Search
+	- Click Title to view event details
+	- Click Organizer to view organizer information
+	
 ## Screenshots
 Landing Page:
 ![Landing Page](screenshots/landing_page.png)
@@ -55,20 +69,6 @@ Error:
 * NodeJS
 * ExpressJS
 * PostgreSQL
-
-### Features:
-- Responsive Design
-- Accessible Design
-- Register for an account
-- Secure Signin
-- User Dashboard
-  - Edit User Details
-  - View all upcoming events you created or plan to attend
-- Add an Event
-- Search All Events
-	- Case Sensitive Keyword Search
-	- Click Title to view event details
-	- Click Organizer to view organizer information
 
 ## Demo
 
