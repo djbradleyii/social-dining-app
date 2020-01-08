@@ -8,13 +8,13 @@ The Random Activity Generator helps try to make it less difficult and fun. With 
 Landing Page:
 ![Landing Page](screenshots/landing_page.png)
 
-Register:
+Register:  
 ![Register](screenshots/registration.png)
 
-Account Created:
+Account Created:  
 ![Account Created](screenshots/account_created.png)
 
-Sign In:
+Sign In:  
 ![Sign In](screenshots/signin.png)
 
 Dashboard:
@@ -29,7 +29,7 @@ Edit Event Details:
 Add Event:
 ![Add Event](screenshots/add_event.png)
 
-Search:
+Search:  
 ![Search](screenshots/search.png)
 
 Event Details:
@@ -41,7 +41,7 @@ Event Organizer Details:
 Logged Out:  
 ![Logged Out](screenshots/logged_out.png)
 
-Error:
+Error:  
 ![Error](screenshots/error.png)
 
 ## Built with
