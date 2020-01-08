@@ -42,6 +42,9 @@ Landing Page:
 Register:  
 ![Register](screenshots/registration.png)
 
+Error:  
+![Error](screenshots/error.png)
+
 Account Created:  
 ![Account Created](screenshots/account_created.png)
 
@@ -71,6 +74,3 @@ Event Organizer Details:
 
 Logged Out:  
 ![Logged Out](screenshots/logged_out.png)
-
-Error:  
-![Error](screenshots/error.png)
