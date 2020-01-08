@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Social Dining App
 
-## Available Scripts
+You have time on your hands, but zero plans. Whether alone or with company, attempting to figure out what to do with your day is almost as difficult as trying to decide on what to eat. 
 
-In the project directory, you can run:
+The Random Activity Generator helps try to make it less difficult and fun. With simplicity in mind, you have two options available, choose a specific category and limit the results to "Accessible" activities. With the activity follows YouTube videos related to the activity generated.  
 
-### `npm start`
+## Screenshots
+Landing Page:
+![Landing Page](screenshots/landing_page.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Register:
+![Register](screenshots/registration.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Account Created:
+![Account Created](screenshots/account_created.png)
 
-### `npm test`
+Sign In:
+![Sign In](screenshots/signin.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Dashboard:
+![Dashboard](screenshots/dashboard.png)
 
-### `npm run build`
+Edit User Details:
+![Edit User Details](screenshots/edit_user_details.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Edit Event Details:
+![Edit Event Details](screenshots/edit_event_details.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Add Event:
+![Add Event](screenshots/add_event.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Search:
+![Search](screenshots/search.png)
 
-### `npm run eject`
+Event Details:
+![Event Details](screenshots/event_details.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Event Organizer Details:
+![Event Organizer Details](screenshots/event_organizer_details.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Logged Out:
+![Logged Out](screenshots/logged_out.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Error:
+![Error](screenshots/error.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Built with
+* HTML5
+* CSS3
+* JavaScript/ES6
+* ReactJS
+* [RESTful API](https://github.com/djbradleyii/social-dining-app-api)
 
-## Learn More
+### Features:
+- Responsive Design
+- Accessible Design
+- Register for an account
+- Secure Signin
+- User Dashboard
+  - Edit User Details
+  - View all upcoming events you created or plan to attend
+- Add an Event
+- Search All Events
+	- Case Sensitive Keyword Search
+	- Click Title to view event details
+	- Click Organizer to view organizer information
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Demo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [Live Demo](https://social-dining-app.now.sh/)
