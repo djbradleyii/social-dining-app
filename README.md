@@ -1,8 +1,8 @@
 # Social Dining App
 
-You have time on your hands, but zero plans. Whether alone or with company, attempting to figure out what to do with your day is almost as difficult as trying to decide on what to eat. 
+If you have a fear of networking or seek to expand your social circle, this app is for you. Connect with different people over dinner, drinks, or maybe even some karaoke. 
 
-The Random Activity Generator helps try to make it less difficult and fun. With simplicity in mind, you have two options available, choose a specific category and limit the results to "Accessible" activities. With the activity follows YouTube videos related to the activity generated.  
+Create social dining events, such as Singles night, Game night, Networking or Social with your own creative brand of social dining experience. The goal is to have fun, eat delicious food and mingle with others.  
 
 ## Screenshots
 Landing Page:
