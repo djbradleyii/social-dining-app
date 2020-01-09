@@ -91,7 +91,7 @@ export default class SearchPage extends React.Component{
                             <form id="search-form" onSubmit={this.updateKeyword}>
                                 <div className="search-info">Input a search term to search all events based on title, address, restaurant, event_purpose and description.</div>
                                 <div>
-                                    <label htmlFor="search">Search <span className="searchCaseSensitive">(Case Sensitive):</span> </label>
+                                    <label htmlFor="search">Search <span className="searchCaseSensitive">(Case Insensitive):</span> </label>
                                     <input type="search" id="search" placeholder="Wine &amp; Networking" value={this.state.keyword} name="keyword" onChange={this.updateKeyword}/>
                                 </div>
                             </form>
