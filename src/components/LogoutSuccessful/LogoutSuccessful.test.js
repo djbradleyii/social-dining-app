@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import PageNotFound from './PageNotFound';
+import LogoutSuccessful from './LogoutSuccessful';
 
-it('renders Page Not Found Component without crashing', () => {
+it('renders LogoutSuccessful Component without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <BrowserRouter>
-      <PageNotFound />
-    </BrowserRouter>,
+      <BrowserRouter>
+      <LogoutSuccessful />
+      </BrowserRouter>,
     div,
   );
   ReactDOM.unmountComponentAtNode(div);

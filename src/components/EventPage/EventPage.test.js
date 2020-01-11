@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import PageNotFound from './PageNotFound';
+import EventPage from './EventPage';
 
-it('renders Page Not Found Component without crashing', () => {
+it('renders EventPage Component without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <BrowserRouter>
-      <PageNotFound />
-    </BrowserRouter>,
+      <BrowserRouter>
+      <EventPage />
+      </BrowserRouter>,
     div,
   );
   ReactDOM.unmountComponentAtNode(div);

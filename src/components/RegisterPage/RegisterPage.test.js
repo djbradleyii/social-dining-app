@@ -6,9 +6,7 @@ import RegisterPage from './RegisterPage';
 it('renders Register Page Component without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <BrowserRouter>
-      <RegisterPage />
-    </BrowserRouter>,
+      <RegisterPage />,
     div,
   );
   ReactDOM.unmountComponentAtNode(div);
