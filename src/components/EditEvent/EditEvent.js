@@ -28,7 +28,13 @@ export default class EditEvent extends React.Component{
     }
 
     render(){
-        let eventDetails = this.context.selectedEvent;
+        let eventDetails = this.context.selectedEvent.hasOwnProperty('event') ? this.context.selectedEvent : {event:{}};
+        
+        if(!eventDetails.event.hasOwnProperty('title') && this.props.history){
+            this.props.history.goBack(-1);
+        }
+
+
         return(
             <form onSubmit={(e) => this.handleFormSubmit(e, eventDetails.event.id)} id="add-event-form">
                 <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
