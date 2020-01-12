@@ -9,6 +9,7 @@ const ContextManager = React.createContext({
   getAllEvents: () => {},
   updateError: null,
   scrollToErrorMessage: () => {},
+  clearErrorMessage: () => {}
 });
 
 export default ContextManager;
