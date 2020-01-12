@@ -4,7 +4,7 @@ import UsersApiService from '../../services/users-api-service';
 import ActiveUserService from '../../services/activeuser-service';
 import TokenService from '../../services/token-service';
 
-export default class RegisterPage extends React.Component{
+export default class EditUser extends React.Component{
     static contextType = ContextManager;
         handleRegSubmit = (e) => {
             e.preventDefault();
@@ -42,7 +42,7 @@ export default class RegisterPage extends React.Component{
         }
 
     render(){
-        const userData = ActiveUserService.getUserData().user;
+        const userData = ActiveUserService.getUserData() ? ActiveUserService.getUserData().user : {};
         return(
             <form id="register-form" onSubmit={this.handleRegSubmit}>
                 <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>

@@ -67,7 +67,7 @@ class EventDetails extends React.Component{
                     let userId = null;
                     let selectedEvent = null;
                     let isOwnerOfEvent = null;
-                    let activeuser = ActiveUserService.getUserData();
+                    let activeuser = ActiveUserService.getUserData() ? ActiveUserService.getUserData() : {};
                     let user = activeuser.user;
                     let isRSVP = false;
 
