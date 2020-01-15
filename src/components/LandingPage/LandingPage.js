@@ -32,7 +32,7 @@ function LangingPage(props) {
       <p>
       <b>Demo Account</b>
         {' '}
-- Demo Credentials: <b>Email:</b> DemoAccount@gmail.com <b>Pass:</b> Demoacct1!. This Demo account will have all of the same functionality listed above.
+- Demo Credentials: <b>Email:</b> DemoAccount@gmail.com <b>Pass:</b> "Demoacct1!" (Do not add the quotes). This Demo account will have all of the same functionality listed above.
       </p>
 
       <p>Enjoy!</p>
