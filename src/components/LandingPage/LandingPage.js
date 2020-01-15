@@ -29,6 +29,10 @@ function LangingPage(props) {
 
       <p>The goal is to have fun, meet interesting people, and eat delicious food.</p>
 
+      <p>
+- Demo Credentials: <b>Email:</b> DemoAccount@gmail.com <b>Pass:</b> Demoacct1!. This Demo account will have all of the same functionality listed above.
+      </p>
+
       <p>Enjoy!</p>
     </section>
   );
