@@ -34,7 +34,6 @@ Create social dining events, such as Singles night, Game night, Networking or So
 ## Demo
 
 - [Live Demo](https://social-dining-app.now.sh/)
-- Credentials: **Email:** DemoAccount@gmail.com **Pass:** Demoacct1!
 
 ## Screenshots
 Landing Page:
