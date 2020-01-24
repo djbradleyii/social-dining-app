@@ -30,6 +30,7 @@ class App extends React.Component{
       events: [],
       selectedEvent: {},
       errorMessage: null,
+      loadingMessage: null
     }
   }
 
@@ -76,6 +77,18 @@ class App extends React.Component{
     });
   }
 
+  updateLoadingMessage = (msg) => {
+    this.setState({
+      loadingMessage: msg
+    });
+  }
+
+  clearLoadingMessage = () => {
+    this.setState({
+      loadingMessage: null
+    });
+  }
+
   getAllEvents = () => {
     const { keyword } = this.state;
     EventsApiService.getAllEvents(keyword)
@@ -108,12 +121,15 @@ class App extends React.Component{
       loggedInUserData: this.state.loggedInUserData,
       events: this.state.events,
       errorMessage: this.state.errorMessage,
+      loadingMessage: this.state.loadingMessage,
       getSelectedEvent: this.getSelectedEvent,
       selectedEvent: this.state.selectedEvent,
       getAllEvents: this.getAllEvents,
       getAllEventsForUser: this.getAllEventsForUser, 
       updateErrorMessage: this.updateErrorMessage,
       clearErrorMessage: this.clearErrorMessage,
+      updateLoadingMessage: this.updateLoadingMessage,
+      clearLoadingMessage: this.clearLoadingMessage,
       scrollToErrorMessage: this.scrollToErrorMessage
     }
     return(

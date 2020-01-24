@@ -2,13 +2,12 @@ import React from 'react';
 import './RegisterPage.css';
 import ContextManager from '../../context/context-manager';
 import AuthApiService from '../../services/auth-api-service';
-//import AuthApiService from '../../services/auth-api-service';
-//import TokenService from '../../services/token-service';
 
 export default class RegisterPage extends React.Component{
     static contextType = ContextManager;
     
         handleRegSubmit = (e) => {
+            this.context.updateLoadingMessage('Loading...');
             e.preventDefault();
             this.setState({ error: null });
             const { fname, lname, dob, gender, marital_status, occupation, bio, email, password, passwordVerify } = e.target;
@@ -42,16 +41,19 @@ export default class RegisterPage extends React.Component{
                     history.push(`/registered`);
                 })
                 .catch(res => {
+                    this.context.clearLoadingMessage();
                     this.context.updateErrorMessage('Oops: '+ res.error);
                     this.context.scrollToErrorMessage();
                 })
             } else {
+                this.context.clearLoadingMessage();
                 this.context.updateErrorMessage('Password must match');
                 this.context.scrollToErrorMessage();
             }
         }
 
         componentWillUnmount(){
+            this.context.clearLoadingMessage();
             this.context.clearErrorMessage();
         }
 
@@ -111,6 +113,7 @@ export default class RegisterPage extends React.Component{
                     <label htmlFor="passwordVerify">*Verify Password:</label>
                     <input type="password" id="passwordVerify" name="passwordVerify" required />
                 </div>
+                <div className="loading-message">{!!this.context.loadingMessage && this.context.loadingMessage}</div>
                 <div>
                     <button type="submit">Submit</button>
                 </div>    

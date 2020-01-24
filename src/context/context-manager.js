@@ -5,11 +5,14 @@ const ContextManager = React.createContext({
   events: [],
   selectedEvent: {},
   errorMessage: null,
+  loadingMessage: null,
   getAllUsers: () => {},
   getAllEvents: () => {},
   updateError: null,
   scrollToErrorMessage: () => {},
-  clearErrorMessage: () => {}
+  clearErrorMessage: () => {},
+  updateLoadingMessage: () => {},
+  clearLoadingMessage: () => {}
 });
 
 export default ContextManager;

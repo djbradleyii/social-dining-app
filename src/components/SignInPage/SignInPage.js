@@ -9,6 +9,7 @@ import './SignInPage.css';
 export default class SignInPage extends React.Component{
     static contextType = ContextManager;
     handleSubmitJwtAuth = e => {
+        this.context.updateLoadingMessage('Loading...');
         e.preventDefault();
         this.setState({ error: null });
         const { email, password } = e.target;
@@ -27,19 +28,26 @@ export default class SignInPage extends React.Component{
                 ActiveUserService.saveUserData(usersData);
             })
             this.context.getAllEventsForUser();
+            this.context.clearLoadingMessage();
             this.context.clearErrorMessage();
             history.push(`/dashboard`); 
          })
          .catch(res => {
+            this.context.clearLoadingMessage();
             this.context.updateErrorMessage('Oops: '+ res.error);
             this.context.scrollToErrorMessage();
          })
+    }
 
+    componentWillUnmount(){
+        this.context.clearLoadingMessage();
+        this.context.clearErrorMessage();
     }
 
     render(){
         return(
             <form onSubmit={this.handleSubmitJwtAuth} id="signin-form">
+                <div className="loading-message">{!!this.context.loadingMessage && this.context.loadingMessage}</div>
                 <div className="error-message">{!!this.context.errorMessage && this.context.errorMessage}</div>
                 <div>
                     <label htmlFor="email">Email:</label>
