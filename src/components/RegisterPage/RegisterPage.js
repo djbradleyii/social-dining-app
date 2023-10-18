@@ -69,11 +69,6 @@ export default class RegisterPage extends React.Component {
   }
 
   render() {
-    console.log(
-      "%cRegisterPage.js line:59 this.context.errorMessage",
-      "color: #007acc;",
-      this.context.errorMessage
-    );
     return (
       <form id="register-form" onSubmit={this.handleRegSubmit}>
         <div className="info">*Required Fields</div>
